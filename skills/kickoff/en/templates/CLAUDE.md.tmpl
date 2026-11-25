@@ -1,0 +1,24 @@
+# {project name}
+
+## Project
+- Type: {web or app UI / server or API / data processing / library or CLI}
+- Data handled: {personal or confidential data present / none}
+- Main features: {applicable items among login, file upload, DB, admin UI, payment or coupon, verification code, AI feature / none}
+- Deployment: {internet / closed network / TBD}
+
+## Working rules
+- Commit and push only when asked
+- Never put passwords, API keys, or tokens in code or Git
+- {only if .env ignore confirmed} `.env` is listed in `.gitignore`
+- {only if Has UI} Follow the `uiuxpatterns` skill for UI work (mode A before design, mode C after implementation)
+- {only if Security scope} Follow the `securecoding` skill for work on login, uploads, DB, APIs, dependencies, admin UI, payment, coupons, verification codes, and AI features
+- {only if Security docs created} Fill in `docs/security/security-architecture.md` before the first feature code (roles, path separation, where values are computed, secret storage)
+- {only if Security scope} Price, quantity, coupon, payment success, and permission values are decided by the server, never taken from values the client sends
+- {only if Security docs created} Record security check results in `docs/security/security-report.md`. Mark tests that were not run as `NOT_TESTED`
+
+## Test and build
+- Test: {command}
+- Build: {command}
+
+## Notes
+<!-- Record decisions and reasons with dates -->

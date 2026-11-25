@@ -20,7 +20,7 @@
   <a href="#설치">설치</a> | <a href="#스킬">스킬</a> | <a href="#securecoding">securecoding</a> | <a href="CONTRIBUTING.md">기여</a> | <a href="SECURITY.md">보안</a> | <a href="README.md">English</a>
 </p>
 
-[Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md). 스킬 본문은 한국어이고 영어 번역은 [ROADMAP.md](ROADMAP.md) 에 있다.
+[Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md). 스킬 본문은 한국어이고 핵심 파일의 영어 사본은 `skills/<name>/en/` 에 있다. 나머지 참조 문서는 아직 한국어뿐이다.
 
 <table>
 <tr>
@@ -67,7 +67,7 @@ flowchart LR
 | `securecoding` | `/devkit:securecoding` | 보안 설계 및 검수: 통제 24개, 공격 시험 29개, 보고 양식 |
 | `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 패턴 90개, 확장 용어 69개 및 UX 법칙, 웹 플랫폼 기능 선택표, 상호작용 규칙, 에이전트 화면 기준, 접근성 및 다크 패턴 점검 |
 
-작업이 스킬 설명과 맞으면 자동으로도 불러온다.
+작업이 스킬 설명과 맞으면 자동으로도 불러온다. 답에 따라 결과가 달라질 때만 짧은 객관식으로 묻고, 작은 요청은 바로 답한다.
 
 ## securecoding
 - **설계 먼저**: 요청 경로 (입구 계층, 서비스 계층, 데이터 계층), 원칙 16개, 첫 기능 전에 채우는 `security-architecture.md`

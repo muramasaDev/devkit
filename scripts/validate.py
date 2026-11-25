@@ -171,15 +171,57 @@ def check_text():
                 err(f"{p.relative_to(ROOT)}:{line}: {label} '{m.group(0)[:20]}'")
 
 
-# 7. 개별 검증기
+# 8. 개별 검증기
 def run_uiux():
     r = subprocess.run([sys.executable, str(ROOT / "scripts/validate_uiuxpatterns.py")], capture_output=True, text=True, encoding="utf-8")
     if r.returncode:
         err("validate_uiuxpatterns.py 실패: " + (r.stdout + r.stderr).strip().splitlines()[-1][:200])
 
 
+# 7. 영어 사본 대조 (skills/<name>/en/ 은 한국어 원본과 ID, 코드 블록, 표 행이 같아야 함)
+TOKENS = re.compile(r"SEC-\d{2}|DF-\d{2}|[A-Z]{2}-\d{2}|^#{2,4}\s*#?\d{1,2}", re.M)
+HANGUL = re.compile("[가-힣]")
+
+
+def en_pairs():
+    for d in sorted(SKILLS.iterdir()):
+        en = d / "en"
+        if not en.is_dir():
+            continue
+        for f in sorted(en.rglob("*")):
+            if not f.is_file():
+                continue
+            rel = f.relative_to(en)
+            src = d / ("SKILL.md" if rel.name == "SKILL.en.md" else rel)
+            yield d.name, f, src
+
+
+def check_en():
+    for skill, f, src in en_pairs():
+        label = f.relative_to(ROOT)
+        if not src.exists():
+            err(f"{label}: 한국어 원본 {src.relative_to(ROOT)} 없음")
+            continue
+        e, k = read(f), read(src)
+        if f.suffix == ".md" and re.match(r"---\nname:", e):
+            err(f"{label}: frontmatter name 이 있으면 스킬로 오인됨")
+        if f.name != "gitignore":
+            te, tk = sorted(set(TOKENS.findall(e))), sorted(set(TOKENS.findall(k)))
+            if te != tk:
+                err(f"{label}: ID 집합이 원본과 다름 (없음 {sorted(set(tk) - set(te))[:6]}, 추가 {sorted(set(te) - set(tk))[:6]})")
+        fe, fk = e.count("```"), k.count("```")
+        if fe != fk:
+            err(f"{label}: 코드 블록 수 {fe} != 원본 {fk}")
+        re_, rk = len(re.findall(r"^\|", e, re.M)), len(re.findall(r"^\|", k, re.M))
+        if re_ != rk:
+            warn(f"{label}: 표 행 수 {re_} != 원본 {rk}")
+        n = len(HANGUL.findall(e))
+        if n > max(40, len(e) * 0.03):
+            warn(f"{label}: 한글 {n}자 남음")
+
+
 def main():
-    for fn in (check_frontmatter, check_versions, check_sec, check_attack_tests, check_links, check_text, run_uiux):
+    for fn in (check_frontmatter, check_versions, check_sec, check_attack_tests, check_links, check_text, check_en, run_uiux):
         try:
             fn()
         except Exception as e:  # noqa: BLE001

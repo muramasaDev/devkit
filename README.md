@@ -20,7 +20,7 @@
   <a href="#install">Install</a> | <a href="#skills">Skills</a> | <a href="#securecoding">securecoding</a> | <a href="CONTRIBUTING.md">Contributing</a> | <a href="SECURITY.md">Security</a> | <a href="README.ko.md">한국어</a>
 </p>
 
-Skills for [Claude Code](https://code.claude.com). MIT, third-party sources in [NOTICE.md](NOTICE.md). **Skill content is written in Korean** (Claude answers in your language); English translation is tracked in [ROADMAP.md](ROADMAP.md).
+Skills for [Claude Code](https://code.claude.com). MIT, third-party sources in [NOTICE.md](NOTICE.md). **Skill text is Korean with English copies of the core files** (`skills/<name>/en/`); the remaining references are Korean for now. Claude answers in your language.
 
 <table>
 <tr>
@@ -67,7 +67,7 @@ Without the plugin system: copy all three folders from `skills/` to `~/.claude/s
 | `securecoding` | `/devkit:securecoding` | Security design and review: 24 controls, 29 attack tests, report template |
 | `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 90 patterns, 69 extended terms and UX laws, native web feature table, interaction rules, agent screen guide, accessibility and dark-pattern checks |
 
-Skills also load automatically when a task matches their description.
+Skills also load automatically when a task matches their description. They ask short multiple-choice questions only when the answer changes the result, and answer small requests directly.
 
 ## securecoding
 - **Design first**: request path (entry layer, service layer, data layer), 16 principles, `security-architecture.md` template to fill before the first feature
@@ -88,7 +88,7 @@ assets/           banner.svg, social-preview.png
 ```
 
 ## Language
-Skill bodies and references are written in Korean. English README and translations are welcome ([CONTRIBUTING.md](CONTRIBUTING.md)).
+Skill bodies and references are written in Korean. English copies live in `skills/<name>/en/`: the three `SKILL.en.md`, the `securecoding` templates and attack tests, the `kickoff` template and tools, and `uiuxpatterns` defaults, snippets and Korean flows. When the request is in English, the skill reads `en/` first. `controls.md`, `kisa-map.md`, `incidents.md`, `cloud.md` and most `uiuxpatterns` references are Korean for now. `scripts/validate.py` fails when an English copy drifts from its Korean original (IDs, code blocks). Translations are welcome ([CONTRIBUTING.md](CONTRIBUTING.md)).
 
 ## Limits
 - A checklist and design guide, not a penetration test or legal advice

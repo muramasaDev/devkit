@@ -19,7 +19,7 @@ CI workflow, `scripts/validate.py`, 9 eval cases (written, not run), ASVS 5.0 an
 ## 0.6 Reach
 | # | Item | Done when |
 |---|---|---|
-| 8 | English skill text | `SKILL.md` x3, `templates/`, `attack-tests.md` first; layout decided in [CONTRIBUTING.md](CONTRIBUTING.md); `validate.py` checks the same IDs in every language |
+| 8 | Remaining English text | Core files are done (`en/`). Next: `controls.md`, `kisa-map.md`, `architecture.md`, then `uiuxpatterns` category files; `validate.py` already checks parity |
 | 9 | Worked example | `examples/` holds one small app with a filled `security-architecture.md`, a `security-report.md` with real results and a screen review |
 | 10 | Stack presets in `kickoff` | Next.js, FastAPI and Spring presets give auth, session, upload and secrets setup per control |
 | 11 | Other sources | Oracle Java SE secure coding guidelines read into `cloud.md`; Azure and GCP rules added; KISA 2023 edition checked |

@@ -5,6 +5,8 @@ description: Use when writing or reviewing code where external input is interpre
 
 # Secure Coding (보안 설계 및 개발 점검)
 
+영어 사용자: 요청이 영어이면 `en/SKILL.en.md` 와 en/ 아래 템플릿 및 시험표를 우선 읽는다 (controls.md 등 나머지 참조는 한국어).
+
 시작 단계에서 보안 구조를 정하고, 개발 중 코드를 쓰거나 검수할 때 보안 통제 24개 (SEC-01 ~ SEC-24) 를 적용해 결과를 기록한다. 국내 개발보안 가이드 (KISA) 의 설계 및 구현 항목은 `references/kisa-map.md` 로 통제에 대응시켜 두었다. 이 스킬은 설계 지침과 체크리스트이며 침투시험을 대신하지 않는다.
 
 ## 쓰는 때
@@ -19,7 +21,7 @@ description: Use when writing or reviewing code where external input is interpre
 
 ## 쓰는 순서
 1. **설계 (기능을 만들기 전)**: `references/architecture.md` 의 계층 구조와 원칙으로 `docs/security/security-architecture.md` (`templates/security-architecture.md`) 를 채운다. 역할, 경로 구분, 값의 계산 위치, 비밀 보관 및 공개 허용 키, 인증번호 및 비밀번호 기본값, AI 도구 권한을 정한다. 정책값은 이 문서에 적는다. 모르면 `미정`
-2. 프로젝트 성격을 확인한다 (`kickoff` 스킬이 이미 물었으면 그 답을 쓴다): 개인정보 또는 기밀 여부, 로그인, 파일 업로드, DB 사용, 관리자 화면, 결제 또는 쿠폰, 인증번호, AI 기능, 배포 (인터넷 또는 폐쇄망), 외부 연동
+2. 프로젝트 성격을 확인한다 (`kickoff` 스킬이 이미 물었으면 그 답을 쓴다): 개인정보 또는 기밀 여부, 로그인, 파일 업로드, DB 사용, 관리자 화면, 결제 또는 쿠폰, 인증번호, AI 기능, 배포 (인터넷 또는 폐쇄망), 외부 연동 코드와 요청에서 알 수 없고 선택할 통제가 달라지는 항목만 `AskUserQuestion` 으로 묻는다 (객관식, 한 번에 3문항 이하, '모름' 과 '기본값으로 진행' 선택지 포함): 인터넷 공개 여부, 개인정보 및 결제 처리 여부, 납품 기준 (KISA 진단 여부). 코드 한 조각 검토처럼 범위가 작은 요청은 묻지 않고 답한다. '기본값으로 진행' 이면 가정을 보고서에 적는다
 3. 아래 표로 필수 통제를 고른다. 표에 없는 통제도 코드에 해당 요소가 보이면 추가한다
 4. 구현 후 `코드 검토, 자동 점검, 악용 시나리오 테스트, 수정, 재테스트` 순서로 확인한다. 악용 시나리오는 `references/attack-tests.md` 의 29개 시험표에서 해당 행을 직접 시도한다
 5. 국내 점검 또는 납품 기준 (소프트웨어 보안약점 진단) 이 있으면 `references/kisa-map.md` 로 KISA 항목이 어느 통제에서 확인되는지 본다. 사고 사례가 필요하면 `references/incidents.md`

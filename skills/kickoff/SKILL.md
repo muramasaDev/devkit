@@ -36,6 +36,7 @@ description: 새 프로젝트 시작, 프로젝트 세팅, 킥오프, 초기 설
       - 있으면 각각 `docs/security/security-report.md`, `docs/security/security-architecture.md` 로 복사한다. `security-architecture.md` 는 2번 답으로 알 수 있는 칸(역할, 결제 여부, AI 여부)만 채우고 나머지는 `미정`. 기능 코드보다 먼저 사용자와 이 문서를 채우도록 안내한다
       - 없으면 마무리 보고에 '`securecoding` 미설치' 로 적고 이 단계를 건너뛴다 (**보안 문서 생성됨** 이 아님)
    5. `CLAUDE.md`: `templates/CLAUDE.md.tmpl` 로 만든다 (아래 '`CLAUDE.md` 채우는 법'). `.gitignore` 와 보안 문서 결과가 필요하므로 마지막에 만든다
+      - 사용자가 한국어로 요청하면 `templates/CLAUDE.md.tmpl`, 그 외 언어면 `en/templates/CLAUDE.md.tmpl` 을 쓴다 (영어 절차는 `en/SKILL.en.md`). 생성 파일의 언어는 사용자의 언어를 따른다
 4. **적용할 스킬 안내**
    - **화면 있음**이면 `uiuxpatterns` (설계 전에 모드 A, 구현 후에 모드 C)
    - **보안 대상**이면 `securecoding` (설계 단계는 첫 기능 코드 전, 공격 시나리오 시험은 기능 구현 후). 미설치면 안내하지 않고 3번 4항대로 보고

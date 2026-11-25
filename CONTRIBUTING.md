@@ -16,4 +16,4 @@
 - New third-party material: add it to `NOTICE.md` with its license
 
 ## Translations
-Skill text is Korean. English or other translations are welcome as new files next to the originals, with the same evidence tags.
+Skill text is Korean. Translations go in `skills/<name>/<lang>/` with the same relative paths as the originals (`SKILL.md` becomes `SKILL.<lang>.md`), no frontmatter (so it is not read as a skill), the same IDs, code blocks and table rows, and a `Korean original:` pointer on the first line. `scripts/validate.py` checks IDs and code blocks of every `en/` file against its original. Untranslated references stay Korean and are marked `(Korean for now)`.

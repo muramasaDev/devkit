@@ -6,7 +6,9 @@
 - `securecoding`: condition to control table, report template with commit, environment, tool versions, `PASS(test)` and `PASS(inspection)`
 - `uiuxpatterns`: `defaults.md` (47 default values with source level), `snippets.md` (9 patterns in HTML, React, Vue, browser-run), `korean-flows.md`, state tables for FB and FM patterns, WCAG 2.2 coverage table, Korean e-commerce law mapping for dark patterns, automated check table (axe rules, source regex), one canonical rule for toast, wait time, IME Enter, switch, dialog
 - `kickoff`: stack-aware `.gitignore`, `.gitattributes`, conditional `CLAUDE.md.tmpl`, secret-detection hook option, CLI commands with pinned versions
-- Repo: `scripts/validate.py` (versions, SEC IDs, test counts, links, forbidden text, secret patterns), CI workflow, `evals/` (9 cases for `claude plugin eval`, not yet run), code of conduct, issue templates, dependabot
+- Repo: `scripts/validate.py` (versions, SEC IDs, test counts, links, forbidden text, secret patterns), CI workflow, `evals/` (12 cases for `claude plugin eval`, not yet run), code of conduct, issue templates, dependabot
+- `securecoding` and `uiuxpatterns` ask short multiple-choice questions (3 or fewer, with 'Not sure' and 'Proceed with defaults') only when the answer changes the result; small requests are answered directly
+- English copies of core files in `skills/<name>/en/` (SKILL.en.md x3, securecoding templates and attack tests, kickoff template and tools, uiuxpatterns defaults, snippets, Korean flows); `validate.py` checks parity with the Korean originals
 - Skill descriptions shortened to 300 characters or fewer; dangling image references removed from pattern files
 
 ## 0.3.0 (2026-11-25)

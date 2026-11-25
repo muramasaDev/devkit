@@ -9,8 +9,8 @@ claude plugin eval . --case 'securecoding/*'
 
 | Skill | Cases |
 |---|---|
-| `securecoding` | `login-review`, `coupon-design`, `no-overtrigger` |
+| `securecoding` | `login-review`, `coupon-design`, `no-overtrigger`, `asks-scope` |
 | `kickoff` | `new-project`, `library-no-ui`, `existing-gitignore` |
-| `uiuxpatterns` | `payment-failure`, `korean-enter`, `empty-states` |
+| `uiuxpatterns` | `payment-failure`, `korean-enter`, `empty-states`, `asks-region`, `small-no-ask` |
 
 Status: cases written, not yet run. Add scores to `CHANGELOG.md` after a run. `no-overtrigger` should pass without the plugin as well; the others should score higher with it.
