@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security report
+    url: https://github.com/muramasaDev/devkit/security/advisories/new
+    about: Sensitive data or an exploitable defect. Do not use a public issue.

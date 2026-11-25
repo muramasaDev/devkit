@@ -1,0 +1,5 @@
+- Change:
+- Source (URL, date read):
+- [ ] `python scripts/validate_uiuxpatterns.py` passes
+- [ ] No private data, secrets or copied source text
+- [ ] `NOTICE.md` updated for new third-party material
