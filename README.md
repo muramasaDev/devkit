@@ -16,7 +16,7 @@ Without the plugin system: copy a folder from `skills/` to `~/.claude/skills/`. 
 |---|---|---|
 | `kickoff` | `/devkit:kickoff` | New project setup: profile questions, `CLAUDE.md`, `.gitignore`, `git init`, security design doc, which skills apply |
 | `securecoding` | `/devkit:securecoding` | Security design and review: 24 controls, 20 attack tests, report template |
-| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 90 patterns, selection criteria, glossary, accessibility and dark-pattern checks |
+| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 90 patterns, 100+ extended terms and UX laws, native web feature table, interaction rules, agent screen guide, accessibility and dark-pattern checks |
 
 Skills also load automatically when a task matches their description.
 

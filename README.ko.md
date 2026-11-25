@@ -16,7 +16,7 @@
 |---|---|---|
 | `kickoff` | `/devkit:kickoff` | 새 프로젝트 세팅: 성격 질문, `CLAUDE.md`, `.gitignore`, `git init`, 보안 설계 문서, 적용할 스킬 안내 |
 | `securecoding` | `/devkit:securecoding` | 보안 설계 및 검수: 통제 24개, 공격 시험 20개, 보고 양식 |
-| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 패턴 90개, 선정 기준, 용어집, 접근성 및 다크 패턴 점검 |
+| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 패턴 90개, 확장 용어 100여 개 및 UX 법칙, 웹 플랫폼 기능 선택표, 상호작용 규칙, 에이전트 화면 기준, 접근성 및 다크 패턴 점검 |
 
 작업이 스킬 설명과 맞으면 자동으로도 불러온다.
 

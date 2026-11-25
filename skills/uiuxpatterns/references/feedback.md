@@ -133,7 +133,7 @@
 - Implementation Guidelines: 입력 도중 타이핑마다 오류를 띄우지 않고 필드를 벗어날 때 또는 제출 때 검증; 오류 문구에 원인 및 해결법 포함; 법적 및 금융 거래는 제출 전 확인 단계(WCAG 3.3.4)
 - Common Mistakes: "오류가 발생했습니다"처럼 원인이 없는 문구; 필드 위 토스트로만 알림; 오류 상태가 색만으로 구분됨
 - Related Patterns: FB-01, FM-01, ES-08
-- Reference Image: `assets/01-feedback.png` 카드 장면: 이메일 필드(값 "woody@mail") 빨간 테두리, 아래 문구 "이메일 형식을 확인해 주세요"
+- Reference Image: `assets/01-feedback.png` 카드 장면: 이메일 필드(값 "user@mail") 빨간 테두리, 아래 문구 "이메일 형식을 확인해 주세요"
 
 ## FB-07 툴팁 (Tooltip)
 - ID: FB-07

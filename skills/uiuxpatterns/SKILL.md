@@ -1,21 +1,21 @@
 ---
 name: uiuxpatterns
-description: Use when designing, implementing, reviewing, refactoring, or auditing any UI or UX (web, app, SaaS, AI chat or agent interface, admin dashboard, enterprise screen), when choosing between UI patterns (toast vs snackbar vs modal, skeleton vs spinner, pagination vs infinite scroll, tab bar vs drawer), when defining loading, empty, error, or form states, gestures, motion, navigation, or design tokens, when checking accessibility (WCAG 2.2 AA) or responsive behavior, or when checking a flow for dark patterns. 화면 설계, UI 구현, UI 검수, UX 점검, 리팩터링, 디자인 시스템, 패턴 선정, 토스트, 모달, 스켈레톤, 빈 화면, AI 챗봇 화면, 다크 패턴, 접근성, 반응형, 빈 화면, 결과 없음, 스피너, 탭바, 드로어, 브레드크럼, 이즈 아웃, 햄버거 메뉴, 로딩 어떻게, UI 검수, 화면 점검 요청에 사용.
+description: Use when designing, implementing, reviewing, refactoring, or auditing any UI or UX (web, app, SaaS, AI chat or agent interface, admin dashboard), when choosing between UI patterns (toast vs snackbar vs modal, skeleton vs spinner, pagination vs infinite scroll, tab bar vs drawer), when defining loading, empty, error, or form states, gestures, motion, navigation, or design tokens, when checking accessibility (WCAG 2.2 AA), responsive behavior, or dark patterns, when picking native web features (dialog, popover, view transitions), when building agent screens (tool calls, human approval), or when looking up the name of a UI element or UX law. 화면 설계, UI 구현, UI 검수, UX 점검, 리팩터링, 디자인 시스템, 패턴 선정, 토스트, 모달, 스켈레톤, 빈 화면, AI 챗봇 화면, 다크 패턴, 접근성, 반응형, 스피너, 탭바, 드로어, 브레드크럼, 이즈 아웃, 햄버거 메뉴, 콤보박스, 데이터 테이블, 인라인 편집, 명령 팔레트, 팝오버, 뷰 전환, 에이전트 승인 화면, 한글 입력 Enter, 힉의 법칙, INP, 용어 모를 때 요청에 사용.
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
-# UI UX Patterns (UI/UX 패턴 90개 및 현장 용어집)
+# UI UX Patterns (UI/UX 패턴 90개, 확장 용어, 웹 플랫폼 및 에이전트 화면 기준)
 
 ## 개요
-- 90개 UI/UX 패턴 지식(10개 카테고리)과 선정 기준으로 화면을 설계, 구현, 검수, 개선하는 스킬
+- 90개 UI/UX 패턴 지식(10개 카테고리), 확장 용어 100여 개, 웹 플랫폼 기능 선택표, 에이전트 화면 기준과 선정 기준으로 화면을 설계, 구현, 검수, 개선하는 스킬
 - 핵심 원칙: 프로젝트 맥락을 먼저 읽고, 사용자의 목적에 필요한 패턴만 쓴다. 필요하지 않은 패턴은 적용하지 않는다
 - 특정 디자인 스타일이나 라이브러리를 강제하지 않는다. 기존 디자인 시스템과 기술 스택이 우선
 - 카테고리 09 (다크 패턴) 는 구현 목록이 아니라 탐지 및 예방 대상
 
 ## 실행 순서
 1. Context Discovery: 요청 분석, 기술 스택 및 기존 디자인 시스템과 컴포넌트 탐색, 작업 범위 결정. 아래 표에서 모드를 정한다. 코드가 없는 신규 프로젝트면 탐색을 건너뛰고 스택 및 디자인 시스템을 `미정` 으로 적은 뒤 스택에 묶이지 않게 설계한다 (토큰 제안은 요청받았을 때만)
-2. Pattern Retrieval: `references/decision-framework.md` 로 후보를 좁히고, 해당 카테고리 파일만 열어 When to Use 및 When Not to Use 를 비교한다
+2. Pattern Retrieval: `references/decision-framework.md` 로 후보를 좁히고 (이름이 90개에 없으면 `references/terms-extended.md` 에서 찾고), 해당 카테고리 파일만 열어 When to Use 및 When Not to Use 를 비교한다
 3. Design Decision: 정보 구조, 컴포넌트, 화면 상태(기본, 로딩, 빈 화면, 오류, 완료), 인터랙션 및 피드백, 토큰 적용 방식을 정한다
 4. Implementation (모드 B, D, E 만): 기존 컴포넌트 재사용, 실제로 동작하는 인터랙션, 반응형, 로딩 및 오류 처리, 접근성
 5. Validation: `references/quality-checklist.md` 로 점검하고 가능한 검사(빌드, 타입, 테스트, 화면 확인)를 실제로 돌린다. 돌리지 못한 항목은 `미검증` 으로 적는다
@@ -60,7 +60,11 @@ metadata:
 | `references/quality-checklist.md` | 5단계 검증 및 검수 (모드 C, F 는 항상) |
 | `references/usage-examples.md` | 호출 예 및 시나리오별 읽을 파일 |
 | `references/glossary.md` | 화면을 시키거나 검수할 때 쓸 이름 (빈 화면, 메뉴 아이콘, 화면 이동, 움직임, 로딩 각 9종), 점검 질문 7개 |
-| `references/woody-dict-index.csv` | 우디디자인랩 UI 미니 사전 90개의 탭, 번호, 한글명, 영문명, 검색 키워드 (2026-11-23 사이트 대조). 별칭 검색용 |
+| `references/pattern-keywords.csv` | 패턴 90개의 ID, 한글명, 영문명, 별칭. 다른 이름으로 부르는 패턴 찾기 |
+| `references/terms-extended.md` | 90개에 없는 용어: 컴포넌트 31, AI 화면 17, UX 법칙 16, 성능 체감 4 와 동의어 표. 이름을 모를 때 |
+| `references/modern-web.md` | 구현에서 대화상자, 팝오버, 탭, 폼 검증, 뷰 전환, 컨테이너 쿼리 등 브라우저 기능으로 해결할 때 (모드 B, D, E) |
+| `references/interaction-rules.md` | 비활성, 검증 시점, 라이브 영역, 한글 입력 Enter, Esc, 토스트 타이머, 채팅 스크롤 등 동작 세부 규칙 (구현 및 검수) |
+| `references/agent-ui.md` | 에이전트 이벤트별 표시, 사람 승인 화면, 도구 호출 동의 (AI 에이전트 화면을 설계하거나 검수할 때) |
 
 - 원본 이미지는 배포본에 없다. Reference Image 항목의 파일명은 원본 이미지 이름이고, 명칭 및 장면은 `references/pattern-catalog.md` 에 글로 옮겨 두었다
 

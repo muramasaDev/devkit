@@ -1,0 +1,91 @@
+id,name_ko,name_en,aliases
+FB-01,토스트,Toast,토스트 메시지; 잠깐 알림; flash message; transient message
+FB-02,스낵바,Snackbar,스낵바; 실행취소 알림; undo bar
+FB-03,배너,Banner,공지 띠; 상단 공지; notice bar; alert bar
+FB-04,모달,Modal dialog,팝업; 대화상자; dialog; lightbox; popup
+FB-05,바텀시트,Bottom sheet,하단 시트; 아래에서 올라오는 창; action sheet
+FB-06,인라인 오류,Inline error,입력 오류 문구; 필드 오류; validation message
+FB-07,툴팁,Tooltip,말풍선 설명; hint; hover hint
+FB-08,코치마크,Coach mark,온보딩 안내; spotlight; 사용법 안내 말풍선; product tour
+FB-09,뱃지,Badge,알림 점; 숫자 표시; notification dot; counter
+FM-01,텍스트 필드 상태,Text field states,입력창; input; 텍스트 박스; 입력 상태
+FM-02,셀렉트,Select,드롭다운; dropdown; 선택 상자; picker
+FM-03,세그먼트,Segmented control,세그먼트 버튼; 토글 그룹; 탭 스위치; button group
+FM-04,스위치,Switch,토글; on/off 스위치; toggle
+FM-05,체크박스,Checkbox,체크 박스; 다중 선택; tick box
+FM-06,라디오,Radio button,라디오 버튼; 단일 선택; option button
+FM-07,슬라이더,Slider,범위 조절; range input; 드래그 바
+FM-08,수량 스테퍼,Stepper,수량 조절; 플러스 마이너스; spinbutton; number stepper
+FM-09,날짜 선택,Date picker,날짜 선택기; 달력; calendar; 캘린더 입력
+LD-01,스피너,Spinner,로딩 아이콘; 빙글빙글; loader; 회전 표시
+LD-02,스켈레톤,Skeleton,스켈레톤 화면; 뼈대 UI; placeholder; shimmer
+LD-03,진행 막대,Progress bar,진행 바; 프로그레스; 업로드 바; loading bar
+LD-04,원형 진행,Progress ring,원형 프로그레스; 도넛 진행; circular progress
+LD-05,단계 표시,Step indicator,스텝; 단계 진행; wizard; progress tracker
+LD-06,버튼 로딩,Button loading,버튼 안 로딩; 처리 중 버튼; loading button; submit spinner
+LD-07,이미지 블러 로딩,Progressive image,블러 업; 흐린 이미지에서 선명; lazy image; LQIP
+LD-08,낙관적 업데이트,Optimistic update,낙관적 UI; 먼저 반영; 즉시 반영; instant update
+LD-09,상단 로딩 바,Top loading bar,상단 진행 바; 페이지 전환 바; route progress
+AI-01,생각 중 표시,Thinking indicator,생각 중; 답변 준비 중; typing indicator; 점 세 개 애니메이션
+AI-02,스트리밍 답변,Streaming response,스트리밍 텍스트; 한 글자씩 출력; typewriter; token stream
+AI-03,추천 질문 칩,Suggested prompts,추천 질문; 시작 질문 칩; prompt chips; starter prompts
+AI-04,다시 생성,Regenerate,재생성; 다시 답변; retry answer
+AI-05,출처 표시,Citations,출처; 근거 링크; 각주; sources; references
+AI-06,답변 피드백,Response feedback,좋아요 싫어요; 엄지 평가; thumbs up down; rating
+AI-07,고쳐 묻기,Edit prompt,질문 수정; 프롬프트 고치기; edit message; resend edited
+AI-08,파일 첨부,File attachment,첨부; 파일 업로드; attach; paperclip
+AI-09,에이전트 단계,Agent steps,작업 단계; 에이전트 진행; task list; tool call log; plan
+ES-01,첫 사용,First use empty state,빈 상태; 처음 화면; zero state; blank slate
+ES-02,검색 결과 없음,No search results,검색 결과 없음; 0건; no results; not found search
+ES-03,필터 결과 없음,No filter results,필터 결과 없음; 조건에 맞는 항목 없음; reset filters
+ES-04,오프라인,Offline state,오프라인; 연결 끊김; no connection; network error
+ES-05,권한 필요,Permission request,권한 요청; 알림 허용; allow access; permission prompt
+ES-06,모두 완료,All done,모두 완료; inbox zero; all caught up; 완료 상태
+ES-07,삭제 직후,After delete,삭제 후 빈 화면; 비운 뒤; emptied; cleared state
+ES-08,오류 화면,Error state,오류 화면; 불러오기 실패; something went wrong; retry screen
+ES-09,잠김,Locked state,잠금 화면; 접근 불가; 권한 없음; paywall; forbidden
+GS-01,탭,Tap,터치; 누르기; click
+GS-02,길게 누르기,Long press,롱프레스; press and hold; 꾹 누르기
+GS-03,스와이프,Swipe,쓸어넘기기; flick; carousel swipe
+GS-04,밀어서 삭제,Swipe to delete,스와이프 액션; swipe action; slide to delete
+GS-05,드래그,Drag,끌기; drag and drop; 끌어 놓기; reorder
+GS-06,핀치,Pinch,핀치 줌; 두 손가락 확대; pinch to zoom
+GS-07,두 번 탭,Double tap,더블 탭; 두 번 누르기; double click; 더블 클릭
+GS-08,당겨서 새로고침,Pull to refresh,풀 투 리프레시; 새로고침 제스처; pull down
+GS-09,가장자리 스와이프,Edge swipe,뒤로 스와이프; back swipe; 엣지 제스처
+MO-01,이즈 인,Ease-in,천천히 시작; 가속; ease in
+MO-02,이즈 아웃,Ease-out,천천히 끝; 감속; ease out
+MO-03,스프링,Spring,탄성; overshoot; 용수철 효과
+MO-04,바운스,Bounce,튕김; 통통; bounce effect
+MO-05,순차 등장,Stagger,시차 등장; 차례로 나타남; cascade
+MO-06,페이드,Fade,서서히 나타남; opacity transition; fade in out
+MO-07,슬라이드,Slide,밀려 들어옴; slide in; 이동 전환
+MO-08,확대 전환,Zoom transition,줌 인 전환; scale transition; 커지며 열림
+MO-09,공유 요소 전환,Shared element transition,이어지는 전환; hero animation; 히어로 전환; morph
+NV-01,하단 탭바,Tab bar,하단 탭; 바텀 내비; bottom navigation
+NV-02,상단 탭,Top tabs,탭 메뉴; underline tabs; tabs
+NV-03,드로어,Drawer,사이드 메뉴; 햄버거 메뉴 패널; off-canvas; slide-out menu
+NV-04,브레드크럼,Breadcrumb,경로 표시; 현재 위치 경로; trail
+NV-05,고정 헤더,Sticky header,따라오는 상단; fixed header; 스크롤 고정
+NV-06,플로팅 버튼,Floating action button,둥근 추가 버튼; FAB; 떠 있는 단추
+NV-07,페이지네이션,Pagination,페이지 번호; 페이징; page numbers; 이전 다음
+NV-08,무한 스크롤,Infinite scroll,더 보기 자동 로딩; endless feed; lazy loading list
+NV-09,뒤로 가기,Back navigation,이전 화면; back button; 뒤로가기 화살표
+DP-01,숨은 해지,Roach motel,가입은 쉽고 해지는 어려움; 해지 숨김; hard to cancel
+DP-02,미리 체크된 동의,Pre-checked consent,기본 체크 동의; 미리 선택; opt-out default
+DP-03,가짜 마감 시계,Fake countdown,가짜 타이머; 조작된 마감; false urgency
+DP-04,죄책감 버튼,Confirmshaming,죄책감 유도; 거절 문구 비하; guilt trip
+DP-05,끼워 팔기,Sneak into basket,몰래 담기; 슬쩍 추가; hidden add-on
+DP-06,가짜 희소성,Fake scarcity,재고 부족 거짓; 허위 희소성; low stock claim
+DP-07,숨은 비용,Hidden costs,마지막에 붙는 수수료; 숨은 요금; drip pricing
+DP-08,몰래 자동 결제,Forced continuity,무료 체험 후 자동 결제; 자동 갱신 몰래; surprise renewal
+DP-09,끝없는 권유,Nagging,반복 팝업; 계속 권유; 끈질긴 알림; repeated prompt
+IC-01,햄버거,Hamburger,줄 세 개; 메뉴 아이콘; three lines
+IC-02,케밥,Kebab,세로 점 세 개; vertical ellipsis; 더보기 세로
+IC-03,미트볼,Meatballs,가로 점 세 개; horizontal ellipsis; 더보기 가로
+IC-04,와플,Waffle,점 아홉 개; 3x3 점 격자; apps grid
+IC-05,벤토,Bento,네모 아홉 개; 격자 메뉴
+IC-06,도너,Döner,위가 넓은 줄 세 개; 필터 아이콘; funnel lines
+IC-07,베지 버거,Veggie burger,줄 두 개; two lines; 얇은 햄버거
+IC-08,계단,Stairs,계단식 줄; staggered lines; 들여쓴 줄 세 개
+IC-09,슬라이더 아이콘,Sliders,조절 줄; 설정 슬라이더; settings sliders

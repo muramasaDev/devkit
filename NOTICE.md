@@ -15,6 +15,8 @@ The three CC BY-SA files adapt guidance from the OWASP Cheat Sheet Series (https
 | Cloudflare, AWS, Oracle documentation | Short rule summaries with page names in `securecoding/references/cloud.md`. Product names are trademarks of their owners |
 | Public incident reports (regulators, courts, vendors, news) | Facts and figures with source links in `securecoding/references/incidents.md` |
 | universal-uiux 0.1.0 (MIT, muramasaDev) | Base of `uiuxpatterns` |
-| UI dictionary item names | Names and keywords only in `uiuxpatterns/references/woody-dict-index.csv`. Descriptions are written independently |
 
-Trademarks and names belong to their owners. This project is not affiliated with or endorsed by any of the above.
+Trademarks and names (including Claude Code, Cloudflare, AWS, Oracle) belong to their owners. This project is not affiliated with or endorsed by any of them.
+
+## Rights and corrections
+Summaries are written in our own words and link to their sources. If you hold rights to material here, or a citation or statement is wrong, open an issue or use private reporting (see `SECURITY.md`). Requests are reviewed and the material is corrected or removed within 7 days.
