@@ -22,6 +22,37 @@
 
 Skills for [Claude Code](https://code.claude.com). MIT, third-party sources in [NOTICE.md](NOTICE.md).
 
+<table>
+<tr>
+<td align="center"><b>3</b><br>skills</td>
+<td align="center"><b>24</b><br>security controls</td>
+<td align="center"><b>20</b><br>attack tests</td>
+<td align="center"><b>90</b><br>UI/UX patterns</td>
+<td align="center"><b>69</b><br>KISA items mapped</td>
+</tr>
+</table>
+
+## Why
+Security and screen rules are cheap to set at the start and costly to retrofit. `devkit` puts them in front of the first feature: a profile interview, a security design document, a fixed set of attack tests and a pattern catalog the agent can look up by name.
+
+## How it works
+```mermaid
+flowchart LR
+  A["/devkit:kickoff<br>profile questions"] --> B["CLAUDE.md<br>.gitignore, git init"]
+  A --> C["security-architecture.md<br>design before code"]
+  C --> D["/devkit:securecoding<br>24 controls"]
+  D --> E["20 attack tests<br>security-report.md"]
+  B --> F["/devkit:uiuxpatterns<br>90 patterns, states, a11y"]
+```
+
+## Try it
+| Say | Skill |
+|---|---|
+| "Set up a new project" | `kickoff` |
+| "Review this login code for security" | `securecoding` |
+| "Does this form handle empty, error and loading states?" | `uiuxpatterns` |
+| "Toast or modal for a failed payment?" | `uiuxpatterns` |
+
 ## Install
 ```text
 /plugin marketplace add muramasaDev/devkit
@@ -53,6 +84,7 @@ skills/
   securecoding/   SKILL.md, references/, templates/
   uiuxpatterns/   SKILL.md, references/, templates/
 scripts/          validate_uiuxpatterns.py
+assets/           banner.svg, social-preview.png
 ```
 
 ## Language
@@ -64,5 +96,5 @@ Skill bodies and references are written in Korean. English README and translatio
 - `uiuxpatterns`: 9 form card scenes are not matched visually
 
 ## Contributing, security, license
-- [CONTRIBUTING.md](CONTRIBUTING.md)  |  [SECURITY.md](SECURITY.md)  |  [CHANGELOG.md](CHANGELOG.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)  |  [SECURITY.md](SECURITY.md)  |  [CHANGELOG.md](CHANGELOG.md)  |  [ROADMAP.md](ROADMAP.md)
 - MIT for code and skill text. `skills/securecoding/references/{controls,architecture,attack-tests}.md` are adapted from OWASP Cheat Sheet Series and licensed CC BY-SA 4.0. Details in [NOTICE.md](NOTICE.md)

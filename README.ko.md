@@ -22,6 +22,37 @@
 
 [Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md).
 
+<table>
+<tr>
+<td align="center"><b>3</b><br>스킬</td>
+<td align="center"><b>24</b><br>보안 통제</td>
+<td align="center"><b>20</b><br>공격 시험</td>
+<td align="center"><b>90</b><br>UI/UX 패턴</td>
+<td align="center"><b>69</b><br>KISA 항목 대응</td>
+</tr>
+</table>
+
+## 왜 필요한가
+보안과 화면 규칙은 시작할 때 정하면 싸고 나중에 고치면 비싸다. `devkit` 은 첫 기능 전에 성격 질문, 보안 설계 문서, 고정된 공격 시험, 이름으로 찾아볼 수 있는 패턴 목록을 앞에 둔다.
+
+## 동작 순서
+```mermaid
+flowchart LR
+  A["/devkit:kickoff<br>성격 질문"] --> B["CLAUDE.md<br>.gitignore, git init"]
+  A --> C["security-architecture.md<br>코드 전에 설계"]
+  C --> D["/devkit:securecoding<br>통제 24개"]
+  D --> E["공격 시험 20개<br>security-report.md"]
+  B --> F["/devkit:uiuxpatterns<br>패턴 90개, 상태, 접근성"]
+```
+
+## 써 보기
+| 이렇게 말한다 | 스킬 |
+|---|---|
+| "새 프로젝트 세팅해 줘" | `kickoff` |
+| "이 로그인 코드 보안 검토해 줘" | `securecoding` |
+| "이 폼에 빈 화면, 오류, 로딩 상태가 있나?" | `uiuxpatterns` |
+| "결제 실패는 토스트야 모달이야?" | `uiuxpatterns` |
+
 ## 설치
 ```text
 /plugin marketplace add muramasaDev/devkit
@@ -53,6 +84,7 @@ skills/
   securecoding/   SKILL.md, references/, templates/
   uiuxpatterns/   SKILL.md, references/, templates/
 scripts/          validate_uiuxpatterns.py
+assets/           banner.svg, social-preview.png
 ```
 
 ## 한계
@@ -61,5 +93,5 @@ scripts/          validate_uiuxpatterns.py
 - `uiuxpatterns` 입력 폼 9개 카드 장면은 눈으로 대조하지 않았다
 
 ## 기여, 보안, 라이선스
-- [CONTRIBUTING.md](CONTRIBUTING.md)  |  [SECURITY.md](SECURITY.md)  |  [CHANGELOG.md](CHANGELOG.md)
+- [CONTRIBUTING.md](CONTRIBUTING.md)  |  [SECURITY.md](SECURITY.md)  |  [CHANGELOG.md](CHANGELOG.md)  |  [ROADMAP.md](ROADMAP.md)
 - 코드와 스킬 본문은 MIT. `skills/securecoding/references/{controls,architecture,attack-tests}.md` 는 OWASP Cheat Sheet Series 를 가공한 것으로 CC BY-SA 4.0. 상세는 [NOTICE.md](NOTICE.md)

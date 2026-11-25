@@ -1,94 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-label="devkit: kickoff, securecoding, uiuxpatterns">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fdf6ea"/>
-      <stop offset="1" stop-color="#fde9e6"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
-      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6b4a2a" flood-opacity="0.12"/>
-    </filter>
-  </defs>
-  <style>
-    text { font-family: -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif; fill: #1b1b1f; }
-    .t { font-size: 20px; font-weight: 700; }
-    .r { font-size: 15px; }
-    .s { font-size: 13px; fill: #6b6b73; }
-    .card { fill: #fff; filter: url(#sh); }
-    .ok { fill: #1f9d55; }
-    .off { fill: #fff; stroke: #c9c9d1; stroke-width: 2; }
-    .chip { fill: #eef2ff; }
-    .chipt { font-size: 14px; fill: #1f4fff; font-weight: 600; }
-  </style>
-
-  <rect width="1200" height="620" fill="url(#bg)"/>
-  <ellipse cx="600" cy="310" rx="520" ry="200" fill="url(#glow)"/>
-
-  <!-- top left: securecoding -->
-  <rect class="card" x="70" y="40" width="320" height="170" rx="16"/>
-  <text class="t" x="94" y="78">securecoding</text>
-  <g class="r">
-    <circle class="ok" cx="102" cy="108" r="9"/><path d="M97 108l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/>
-    <text x="122" y="113">SEC-01 SQL injection</text>
-    <circle class="ok" cx="102" cy="140" r="9"/><path d="M97 140l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/>
-    <text x="122" y="145">SEC-08 XSS</text>
-    <circle class="off" cx="102" cy="172" r="8"/>
-    <text x="122" y="177">SEC-21 AI features</text>
-  </g>
-
-  <!-- top middle: progress -->
-  <rect class="card" x="430" y="40" width="340" height="170" rx="16"/>
-  <text class="t" x="454" y="78">Attack tests</text>
-  <text class="r" x="454" y="112">20 scenarios, run before release</text>
-  <rect class="chip" x="454" y="126" width="70" height="28" rx="14"/><text class="chipt" x="489" y="145" text-anchor="middle">/admin</text>
-  <rect class="chip" x="532" y="126" width="96" height="28" rx="14"/><text class="chipt" x="580" y="145" text-anchor="middle">ID change</text>
-  <rect class="chip" x="636" y="126" width="94" height="28" rx="14"/><text class="chipt" x="683" y="145" text-anchor="middle">quantity -1</text>
-  <text class="s" x="454" y="176">Unrun tests are never marked PASS</text>
-
-  <!-- top right: terminal -->
-  <rect x="830" y="40" width="300" height="170" rx="16" fill="#16161d" filter="url(#sh)"/>
-  <circle cx="852" cy="62" r="5" fill="#ff5f57"/><circle cx="870" cy="62" r="5" fill="#febc2e"/><circle cx="888" cy="62" r="5" fill="#28c840"/>
-  <g font-size="14" style="font-family: Consolas, Menlo, monospace">
-    <text x="852" y="104" style="fill:#8b8b99;font-family:Consolas,Menlo,monospace;font-size:14px">/plugin install devkit@devkit</text>
-    <text x="852" y="132" style="fill:#7ee787;font-family:Consolas,Menlo,monospace;font-size:14px">/devkit:kickoff</text>
-    <text x="852" y="160" style="fill:#e6e6ec;font-family:Consolas,Menlo,monospace;font-size:14px">CLAUDE.md  .gitignore</text>
-    <text x="852" y="184" style="fill:#e6e6ec;font-family:Consolas,Menlo,monospace;font-size:14px">security-architecture.md</text>
-  </g>
-
-  <!-- wordmark -->
-  <text x="600" y="355" text-anchor="middle" style="font-size:150px;font-weight:900;fill:#1f4fff;letter-spacing:-4px">devkit</text>
-  <text x="600" y="400" text-anchor="middle" class="s" style="font-size:18px">kickoff  |  securecoding  |  uiuxpatterns</text>
-
-  <!-- bottom left: uiuxpatterns -->
-  <rect class="card" x="70" y="430" width="320" height="150" rx="16"/>
-  <text class="t" x="94" y="468">uiuxpatterns</text>
-  <text class="s" x="94" y="492">90 patterns, 10 categories</text>
-  <rect class="chip" x="94" y="508" width="62" height="28" rx="14"/><text class="chipt" x="125" y="527" text-anchor="middle">Toast</text>
-  <rect class="chip" x="164" y="508" width="86" height="28" rx="14"/><text class="chipt" x="207" y="527" text-anchor="middle">Skeleton</text>
-  <rect class="chip" x="258" y="508" width="62" height="28" rx="14"/><text class="chipt" x="289" y="527" text-anchor="middle">Modal</text>
-  <rect class="chip" x="94" y="544" width="96" height="28" rx="14"/><text class="chipt" x="142" y="563" text-anchor="middle">Empty state</text>
-
-  <!-- bottom middle: prompt -->
-  <rect class="card" x="430" y="430" width="340" height="62" rx="31"/>
-  <text class="r" x="462" y="467" style="fill:#8b8b99">How should this screen fail?</text>
-  <circle cx="736" cy="461" r="19" fill="#16161d"/>
-  <path d="M736 470v-18m-8 8l8-8 8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect class="card" x="430" y="508" width="340" height="72" rx="16"/>
-  <text class="t" x="454" y="538" style="font-size:16px">Interaction rules</text>
-  <text class="s" x="454" y="562">Esc closes one layer, IME-safe Enter</text>
-
-  <!-- bottom right: checklist table -->
-  <rect class="card" x="830" y="430" width="300" height="150" rx="16"/>
-  <text class="t" x="854" y="468" style="font-size:16px">Release checklist</text>
-  <g class="r">
-    <rect x="854" y="484" width="16" height="16" rx="4" fill="#1b1b1f"/><path d="M858 492l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/>
-    <text x="882" y="497" style="font-size:14px">Secrets out of Git</text>
-    <rect x="854" y="512" width="16" height="16" rx="4" fill="#1b1b1f"/><path d="M858 520l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/>
-    <text x="882" y="525" style="font-size:14px">Server decides price</text>
-    <rect x="854" y="540" width="16" height="16" rx="4" class="off"/>
-    <text x="882" y="553" style="font-size:14px">Rate limit on login</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="devkit: kickoff, securecoding, uiuxpatterns">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fdf7ec"/><stop offset="0.55" stop-color="#fdeee8"/><stop offset="1" stop-color="#f3ecfd"/></linearGradient>
+<radialGradient id="glow" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#d9c9b4" opacity="0.55"/></pattern>
+<filter id="sh" x="-10%" y="-10%" width="120%" height="135%"><feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#6b4a2a" flood-opacity="0.13"/></filter>
+</defs>
+<style>
+text{font-family:-apple-system,"Segoe UI","Malgun Gothic","Apple SD Gothic Neo",Helvetica,Arial,sans-serif;fill:#1b1b1f}
+.t{font-size:20px;font-weight:700} .r{font-size:15px} .s{font-size:13px;fill:#6b6b73}
+.card{fill:#fff;filter:url(#sh)} .off{fill:#fff;stroke:#c9c9d1;stroke-width:2}
+.m{font-family:Consolas,Menlo,monospace;font-size:14px}
+</style>
+<rect width="1280" height="640" fill="url(#bg)"/>
+<rect width="1280" height="640" fill="url(#dots)"/>
+<ellipse cx="640" cy="330" rx="560" ry="210" fill="url(#glow)"/>
+<rect class="card" x="70" y="40" width="340" height="190" rx="18"/>
+<rect x="94" y="62" width="32" height="32" rx="9" fill="#1f4fff"/><path d="M106 71l11 7-11 7z" fill="#fff"/><text x="138" y="84" class="t">kickoff</text><text x="138" y="104" class="s">Set up before the first line</text>
+<rect x="94" y="116" width="18" height="18" rx="5" fill="#1b1b1f"/><path d="M98.5 125.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="124" y="130" class="r">CLAUDE.md</text>
+<rect x="94" y="150" width="18" height="18" rx="5" fill="#1b1b1f"/><path d="M98.5 159.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="124" y="164" class="r">Security design doc</text>
+<rect x="94" y="184" width="18" height="18" rx="5" fill="#1b1b1f"/><path d="M98.5 193.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="124" y="198" class="r">git init and .gitignore</text>
+<rect class="card" x="470" y="40" width="340" height="190" rx="18"/>
+<rect x="494" y="62" width="32" height="32" rx="9" fill="#1f9d55"/><path d="M510 69l8 3v6c0 5-3.5 8-8 9.5-4.5-1.5-8-4.5-8-9.5v-6z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/><text x="538" y="84" class="t">securecoding</text><text x="538" y="104" class="s">24 controls | 20 attack tests</text>
+<rect x="494" y="116" width="18" height="18" rx="5" fill="#1f9d55"/><path d="M498.5 125.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="524" y="130" class="r">SEC-01 SQL injection</text>
+<rect x="494" y="150" width="18" height="18" rx="5" fill="#1f9d55"/><path d="M498.5 159.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="524" y="164" class="r">SEC-08 XSS</text>
+<rect x="495" y="185" width="16" height="16" rx="5" class="off"/><text x="524" y="198" class="r" style="fill:#6b6b73">SEC-21 AI features</text>
+<rect x="870" y="40" width="340" height="190" rx="18" fill="#16161d" filter="url(#sh)"/>
+<circle cx="894" cy="64" r="5" fill="#ff5f57"/><circle cx="912" cy="64" r="5" fill="#febc2e"/><circle cx="930" cy="64" r="5" fill="#28c840"/>
+<text class="m" x="894" y="108" style="fill:#8b8b99">/plugin install devkit@devkit</text>
+<text class="m" x="894" y="140" style="fill:#7ee787">/devkit:kickoff</text>
+<text class="m" x="894" y="172" style="fill:#e6e6ec">wrote CLAUDE.md</text>
+<text class="m" x="894" y="198" style="fill:#e6e6ec">wrote security-architecture.md</text>
+<text x="640" y="385" text-anchor="middle" style="font-size:158px;font-weight:900;fill:#1f4fff;letter-spacing:-5px">devkit</text>
+<text x="640" y="432" text-anchor="middle" style="font-size:19px;fill:#6b6b73">Start every project with the same setup</text>
+<rect class="card" x="70" y="460" width="340" height="158" rx="18"/>
+<rect x="94" y="480" width="32" height="32" rx="9" fill="#e8590c"/><rect x="102" y="488" width="7" height="7" rx="2" fill="#fff"/><rect x="102" y="497" width="7" height="7" rx="2" fill="#fff"/><rect x="111" y="488" width="7" height="7" rx="2" fill="#fff"/><rect x="111" y="497" width="7" height="7" rx="2" fill="#fff"/><text x="138" y="502" class="t">uiuxpatterns</text><text x="138" y="522" class="s">90 patterns | 10 categories</text>
+<rect x="94" y="534" width="64" height="30" rx="15" fill="#fff1e8"/><text x="126.0" y="554" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#c2410c">Toast</text>
+<rect x="166" y="534" width="92" height="30" rx="15" fill="#fff1e8"/><text x="212.0" y="554" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#c2410c">Skeleton</text>
+<rect x="266" y="534" width="66" height="30" rx="15" fill="#fff1e8"/><text x="299.0" y="554" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#c2410c">Modal</text>
+<rect x="94" y="572" width="108" height="30" rx="15" fill="#fff1e8"/><text x="148.0" y="592" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#c2410c">Empty state</text>
+<rect x="210" y="572" width="96" height="30" rx="15" fill="#fff1e8"/><text x="258.0" y="592" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#c2410c">Dark mode</text>
+<rect class="card" x="470" y="460" width="340" height="62" rx="31"/>
+<text class="r" x="502" y="497" style="fill:#8b8b99">How should this screen fail?</text><circle cx="776" cy="491" r="19" fill="#16161d"/><path d="M776 500v-18m-8 8l8-8 8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<rect class="card" x="470" y="538" width="340" height="80" rx="18"/><text class="t" x="494" y="568" style="font-size:16px">Attack tests</text>
+<rect x="494" y="576" width="70" height="30" rx="15" fill="#eef2ff"/><text x="529.0" y="596" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#1f4fff">/admin</text><rect x="572" y="576" width="98" height="30" rx="15" fill="#eef2ff"/><text x="621.0" y="596" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#1f4fff">ID change</text><rect x="678" y="576" width="100" height="30" rx="15" fill="#eef2ff"/><text x="728.0" y="596" text-anchor="middle" style="font-size:14px;font-weight:600;fill:#1f4fff">price -1</text>
+<rect class="card" x="870" y="460" width="340" height="158" rx="18"/><text class="t" x="894" y="494" style="font-size:17px">Release checklist</text>
+<rect x="894" y="512" width="18" height="18" rx="5" fill="#1b1b1f"/><path d="M898.5 521.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="924" y="526" class="r">Secrets out of Git</text>
+<rect x="894" y="546" width="18" height="18" rx="5" fill="#1b1b1f"/><path d="M898.5 555.5l3.2 3.2 6-6.6" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="924" y="560" class="r">Server decides the price</text>
+<rect x="895" y="581" width="16" height="16" rx="5" class="off"/><text x="924" y="594" class="r" style="fill:#6b6b73">Rate limit on login</text>
 </svg>
