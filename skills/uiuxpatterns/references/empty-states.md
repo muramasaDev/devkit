@@ -1,8 +1,8 @@
 # Empty & System States (빈 화면)
 
 - 범위: 목록이 비었거나 기능이 막힌 상태에서 보여주는 9개 화면 패턴 (첫 사용, 검색 및 필터 결과 없음, 오프라인, 권한 필요, 모두 완료, 삭제 직후, 오류, 잠김)
-- 참조 이미지: `assets/05-empty-states.png`
 - 색인: `pattern-catalog.md`
+- 값 정본: `defaults.md` (본문의 DF-nn 은 그 표의 항목 번호)
 - 공통 원칙 1: 빈 화면에는 이유 한 줄 및 다음 행동 하나를 보여준다
 - 공통 원칙 2: 사용자가 할 수 있는 행동이 없으면 단추를 지어내지 않는다
 
@@ -33,7 +33,7 @@
 - Implementation Guidelines: 데이터 요청 성공 및 항목 수 0 을 모두 확인한 뒤에만 표시; 단추의 이동 대상이 실제로 항목을 채울 수 있는 곳이어야 함; 사용자가 채울 방법이 없는 화면이면 단추를 두지 않음
 - Common Mistakes: 불러오기 전에 빈 상태가 잠깐 노출됨; 요청 실패를 빈 상태로 보여줌; 단추의 도착 화면이 또 빈 화면
 - Related Patterns: ES-02, ES-07, ES-08, LD-02
-- Reference Image: `assets/05-empty-states.png`, 북마크 아이콘, "아직 찜한 상품이 없어요", 단추 "상품 둘러보기"
+- Reference Image: 장면:, 북마크 아이콘, "아직 찜한 상품이 없어요", 단추 "상품 둘러보기"
 
 ## ES-02 검색 결과 없음 (No search results)
 - ID: ES-02
@@ -53,7 +53,7 @@
 - Implementation Guidelines: 제안은 실제로 검색해 결과가 있는 것만 보여줌; 제안이 없으면 칩을 만들지 않음; 검색어 입력 칸의 값을 지우지 않음
 - Common Mistakes: 제안 칩을 눌렀더니 다시 결과 0 개; 검색어가 지워져 수정하기 어려움; 오타 추정을 단정 문장으로 씀
 - Related Patterns: ES-03, ES-08, LD-02
-- Reference Image: `assets/05-empty-states.png`, 검색어 "후쿠오가", "검색 결과가 없어요", "이렇게 찾아볼까요?", 제안 칩 "이코노미"
+- Reference Image: 장면:, 검색어 "후쿠오가", "검색 결과가 없어요", "이렇게 찾아볼까요?", 제안 칩 "이코노미"
 
 ## ES-03 필터 결과 없음 (No filter results)
 - ID: ES-03
@@ -68,12 +68,12 @@
 - Interaction Behavior: 적용된 칩을 그대로 보여주고 칩 개별 해제 가능; "필터 초기화" 단추는 모든 필터를 해제하고 결과를 다시 불러옴
 - Required States: 필터 적용 중 결과 0 개; 초기화 후 불러오는 중; 초기화 후 결과 표시
 - Visual Guidelines: 적용 칩은 문구 위나 목록 위에 계속 보임; 초기화 단추는 하나만 강조
-- Accessibility: 결과 수 변화는 `role="status"`; 칩 해제 단추는 이름에 대상 포함 ("서울 필터 해제"); 초기화 뒤 초점 위치를 정해 둠 (WCAG 2.2 2.4.3)
+- Accessibility: 결과 수 변화는 `role="status"`; 칩 해제 단추는 이름에 대상 포함 ("서울 필터 해제"); 초기화 뒤 초점은 필터 영역의 첫 컨트롤로 옮김 (DF-47) (WCAG 2.2 2.4.3)
 - Responsive Considerations: 칩이 많으면 줄바꿈 또는 접기; 초기화 단추는 스크롤 없이 닿게 함
 - Implementation Guidelines: 초기화는 필터만 해제하고 검색어는 유지; 서버가 알 수 있을 때만 "어느 조건을 풀면 결과가 있는지" 안내; 필터가 하나뿐이면 초기화 및 해제를 중복 노출하지 않음
 - Common Mistakes: 초기화가 검색어까지 지움; 적용 칩이 숨겨져 원인을 알 수 없음; 초기화 후에도 같은 화면이 남음
 - Related Patterns: ES-02, ES-01, ES-08
-- Reference Image: `assets/05-empty-states.png`, 적용 칩 "서울", "편도", "조식 포함", "조건에 맞는 숙소가 없어요", 단추 "필터 초기화"
+- Reference Image: 장면:, 적용 칩 "서울", "편도", "조식 포함", "조건에 맞는 숙소가 없어요", 단추 "필터 초기화"
 
 ## ES-04 오프라인 (Offline state)
 - ID: ES-04
@@ -93,7 +93,7 @@
 - Implementation Guidelines: 브라우저의 연결 없음 신호는 믿을 수 있어도 연결 있음은 보장하지 않으므로 실제 요청 결과로 최종 판단; "자동으로 다시 불러와요" 라고 쓰면 실제로 자동 재시도를 구현하고, 구현하지 않으면 문구에 쓰지 않음
 - Common Mistakes: 문구는 자동 재시도인데 구현이 없음; 받아 둔 화면을 지우고 전체를 오프라인 화면으로 바꿈; 서버 오류를 오프라인으로 안내
 - Related Patterns: ES-08, FB-03, LD-01
-- Reference Image: `assets/05-empty-states.png`, 끊긴 연결 아이콘, "인터넷 연결이 끊겼어요", "연결되면 자동으로 다시 불러와요"
+- Reference Image: 장면:, 끊긴 연결 아이콘, "인터넷 연결이 끊겼어요", "연결되면 자동으로 다시 불러와요"
 
 ## ES-05 권한 필요 (Permission request)
 - ID: ES-05
@@ -113,7 +113,7 @@
 - Implementation Guidelines: OS 권한 창은 사용자 동작 (단추) 의 결과로만 호출; 사전 화면에서 "나중에" 를 고르면 OS 창을 호출하지 않고 요청 기회를 아껴 둠; 플랫폼에 따라 한 번 거절하면 앱이 다시 묻지 못할 수 있으므로 이때는 기기 설정에서 바꾸도록 안내
 - Common Mistakes: 이유 없이 첫 실행에서 권한 창 호출; 거절한 뒤 같은 사전 화면을 계속 띄움 (DP-09); 거절 후 기능이 완전히 막힘
 - Related Patterns: DP-09, ES-09, FB-04
-- Reference Image: `assets/05-empty-states.png`, 종 아이콘, "가격이 내리면 알려드릴게요", 단추 "알림 켜기"
+- Reference Image: 장면:, 종 아이콘, "가격이 내리면 알려드릴게요", 단추 "알림 켜기"
 
 ## ES-06 모두 완료 (All done)
 - ID: ES-06
@@ -133,7 +133,7 @@
 - Implementation Guidelines: 서버 기준으로 대기 항목이 0 개임을 확인한 뒤 표시; 이어서 볼 항목이 없으면 링크를 만들지 않음
 - Common Mistakes: 동기화 도중 일부만 보고 완료로 표시; 항상 칭찬 문구만 반복해 정보가 없음; 링크 목적지가 또 빈 화면
 - Related Patterns: ES-01, ES-07, FB-01
-- Reference Image: `assets/05-empty-states.png`, 초록 체크, "오늘 할 일을 다 끝냈어요", 링크 "내일 할 일 보기 ›"
+- Reference Image: 장면:, 초록 체크, "오늘 할 일을 다 끝냈어요", 링크 "내일 할 일 보기 ›"
 
 ## ES-07 삭제 직후 (After delete)
 - ID: ES-07
@@ -153,7 +153,7 @@
 - Implementation Guidelines: 서버 반영이 끝난 뒤 완료 문구를 표시; 되돌리기를 약속하면 그 기간 동안 실제로 복구 가능해야 함; ES-01 문구를 재사용해 삭제 사실이 사라지게 하지 않음
 - Common Mistakes: "아직 없어요" 류 문구로 삭제 사실을 감춤; 삭제가 실패했는데 완료 문구 표시; 되돌리기를 말하고 복구 수단이 없음
 - Related Patterns: ES-01, FB-02, ES-08
-- Reference Image: `assets/05-empty-states.png`, 휴지통 아이콘, "휴지통을 비웠어요"
+- Reference Image: 장면:, 휴지통 아이콘, "휴지통을 비웠어요"
 
 ## ES-08 오류 화면 (Error state)
 - ID: ES-08
@@ -170,10 +170,10 @@
 - Visual Guidelines: 오류 아이콘 및 문구 한 줄; 색만으로 오류를 전달하지 않고 문구 병행 (WCAG 2.2 1.4.1)
 - Accessibility: 화면 전체가 실패한 긴급 오류는 `role="alert"`; 재시도 뒤 상태는 `role="status"`; 다시 시도 단추는 `<button>` (2.1.1)
 - Responsive Considerations: 부분 영역만 실패하면 그 영역 안에서 오류를 보여주고 나머지 화면은 유지
-- Implementation Guidelines: 다시 시도는 실제 같은 요청을 재실행해야 하며 전체 새로고침으로 대신하지 않음; 원인을 모르면 모른다고 쓰고 원인을 지어내지 않음; 지원 문의용 식별자를 줄지는 제품에서 정함
+- Implementation Guidelines: 다시 시도는 실제 같은 요청을 재실행해야 하며 전체 새로고침으로 대신하지 않음; 원인을 모르면 모른다고 쓰고 원인을 지어내지 않음; 서버가 오류 식별자를 주면 한 줄로 표시하고 복사할 수 있게 하며 연결 끊김에는 표시하지 않음 (DF-43)
 - Common Mistakes: 요청 실패를 삼켜서 빈 상태 (ES-01) 로 보임; 재시도 단추가 동작하지 않음; 실패 원인을 추측해 단정함
 - Related Patterns: ES-04, ES-01, FB-06
-- Reference Image: `assets/05-empty-states.png`, 빨간 느낌표, "잠시 문제가 생겼어요", 단추 "다시 시도"
+- Reference Image: 장면:, 빨간 느낌표, "잠시 문제가 생겼어요", 단추 "다시 시도"
 
 ## ES-09 잠김 (Locked state)
 - ID: ES-09
@@ -193,4 +193,4 @@
 - Implementation Guidelines: 조건과 현재 값은 서버 또는 상태의 실제 값에서 가져옴; 진행 막대 값을 꾸며 넣지 않음; 비활성 단추만 두지 않고 이유를 함께 보여줌
 - Common Mistakes: 이유 없이 비활성 단추만 둠; 진행 막대가 실제 값이 아님; 조건을 채워도 화면이 갱신되지 않음
 - Related Patterns: ES-05, LD-03, LD-04
-- Reference Image: `assets/05-empty-states.png`, 자물쇠 아이콘, "3만 원 이상 담으면 열려요", 진행 막대 및 "1/3"
+- Reference Image: 장면:, 자물쇠 아이콘, "3만 원 이상 담으면 열려요", 진행 막대 및 "1/3"

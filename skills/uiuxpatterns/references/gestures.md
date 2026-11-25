@@ -1,8 +1,8 @@
 # Gestures (제스처)
 
 - 범위: 터치 화면 입력 동작 9종 (GS-01 ~ GS-09) 의 판단 조건 및 데스크톱 대응 수단
-- 참조 이미지: `assets/06-gestures.png`
 - 색인: `pattern-catalog.md`
+- 값 정본: `defaults.md` (본문의 DF-nn 은 그 표의 항목 번호)
 
 ## 공통 원칙
 - 제스처는 보이지 않으므로 같은 기능에 보이는 대체 수단 (단추, 메뉴) 을 둔다
@@ -36,7 +36,7 @@
 - Implementation Guidelines: 카드 전체가 목표면 `<a>` 또는 `<button>` 하나로 감싸고 안에 다른 대화형 요소를 중첩하지 않음; `<div>` 에 click 만 다는 구현 금지; 눌림 표시는 `:active`, 키보드 표시는 `:focus-visible`
 - Common Mistakes: `<div>` 에 click 핸들러만 달아 키보드 및 보조기기가 쓰지 못함; 눌림 표시 없음; 인접 목표 간격 부족; 탭 한 번에 결제 같은 확정 동작
 - Related Patterns: GS-02, GS-07, FB-04, NV-01
-- Reference Image: `assets/06-gestures.png` 탭 카드: 항목 카드 "오사카 왕복 항공권"
+- Reference Image: 장면: 탭 카드: 항목 카드 "오사카 왕복 항공권"
 
 ## GS-02 길게 누르기 (Long press)
 - ID: GS-02
@@ -48,7 +48,7 @@
 - User Problem: 목록 항목마다 단추를 두면 화면이 복잡해지는데, 보조 행동은 필요함
 - When to Use: 한 항목에 보조 행동이 여러 개일 때; 단추를 항목마다 두기 어려운 밀집 목록; 숙련 사용자의 지름길
 - When Not to Use: 이 동작만이 유일한 진입일 때; 주 행동; 처음 쓰는 사용자가 반드시 해야 하는 기능
-- Interaction Behavior: 누르고 있으면 기준 시간 뒤 메뉴가 뜸; 기준 시간은 플랫폼 기본값을 따르고 제품에서 정한다; 메뉴 밖 탭 또는 Esc 로 닫음
+- Interaction Behavior: 누르고 있으면 기준 시간 뒤 메뉴가 뜸; 기준 시간은 0.5초이며 플랫폼이 값을 제공하면 그 값을 따름 (DF-08); 메뉴 밖 탭 또는 Esc 로 닫음
 - Required States: 누르는 중 (진행 표시); 메뉴 열림; 선택 항목 강조; 취소 (기준 시간 전에 뗌)
 - Visual Guidelines: 메뉴가 대상 항목 가까이에 뜨고 대상이 강조됨; 삭제는 빨강 및 글자를 함께 사용 (WCAG 1.4.1); 메뉴 항목 대비 4.5:1 (1.4.3)
 - Accessibility: 같은 메뉴를 여는 보이는 단추 (더 보기, IC-02) 를 둠; 키보드의 컨텍스트 메뉴 키 또는 Shift+F10 으로 열림; 메뉴는 `role="menu"`, 여는 단추에 `aria-haspopup="menu"` 및 `aria-expanded`
@@ -56,7 +56,7 @@
 - Implementation Guidelines: 누르는 동안 브라우저 기본 메뉴 및 텍스트 선택이 겹치지 않게 처리; 손가락이 일정 거리 움직이면 길게 누르기를 취소하고 스크롤로 넘김; 메뉴를 닫으면 초점을 대상 항목으로 되돌림
 - Common Mistakes: 메뉴가 유일한 진입이라 발견 불가; 누르는 중 아무 표시 없음; 스크롤과 충돌; 삭제를 확인 및 되돌리기 없이 즉시 실행
 - Related Patterns: GS-04, IC-02, FB-05, FB-02
-- Reference Image: `assets/06-gestures.png` 길게 누르기 카드: "여행 준비 메모" 위에 뜬 메뉴 "복사", "고정", "삭제"(빨강)
+- Reference Image: 장면: 길게 누르기 카드: "여행 준비 메모" 위에 뜬 메뉴 "복사", "고정", "삭제"(빨강)
 
 ## GS-03 스와이프 (Swipe)
 - ID: GS-03
@@ -68,15 +68,15 @@
 - User Problem: 같은 자리에서 여러 내용을 보려 할 때 단추를 반복해서 누르는 부담
 - When to Use: 가로로 나란한 카드 묶음; 사진 갤러리; 쪽 단위 온보딩
 - When Not to Use: 모든 항목을 비교해야 하는 내용 (한꺼번에 보이는 목록이 나음); 화면 가장자리 시작 동작이 필요한 곳 (GS-09 와 충돌)
-- Interaction Behavior: 손가락을 따라 이동하다 놓으면 가까운 단위에 맞춰 멈춤; 첫째 및 마지막 단위에서 더 넘기면 멈춤 표시; 놓는 기준은 제품에서 정한다
-- Required States: 현재 위치; 이동 중; 처음 및 끝; 읽기 중단 (자동 넘김이 있을 때); 쪽 표시 (원본 이미지는 점 3개)
+- Interaction Behavior: 손가락을 따라 이동하다 놓으면 가까운 단위에 맞춰 멈춤; 첫째 및 마지막 단위에서 더 넘기면 멈춤 표시; 놓는 기준은 단위 폭의 절반을 넘으면 다음 단위이고 빠르게 튕기면 거리와 상관없이 다음 단위 (DF-10)
+- Required States: 현재 위치; 이동 중; 처음 및 끝; 읽기 중단 (자동 넘김이 있을 때); 쪽 표시 (예시 화면은 점 3개)
 - Visual Guidelines: 다음 카드 일부를 걸쳐 보여 넘길 수 있음을 알림; 쪽 표시 점은 현재 쪽을 색만으로 구분하지 않음 (1.4.1); 점 대비 3:1 (1.4.11)
 - Accessibility: 경로 제스처이므로 이전 및 다음 단추 또는 눌러서 이동하는 쪽 표시를 둠 (2.5.1); 5초 넘게 자동으로 넘어가면 멈춤 수단 (2.2.2); 키보드 좌우 방향키 이동
 - Responsive Considerations: 데스크톱은 이전 및 다음 단추, 키보드 방향키, 트랙패드 가로 스크롤이 대응; 넓은 화면은 카드 여러 장을 한 번에 보여 넘김을 줄임
 - Implementation Guidelines: 가로 스크롤 영역과 CSS scroll-snap 으로 구현하면 기본 스크롤 접근성이 유지됨; 영역에 이름 (`aria-label`) 을 줌; 넘김 단추는 `<button>`
 - Common Mistakes: 스와이프만 있고 단추가 없음; 쪽 표시가 눌리지 않음; 세로 스크롤과 방향 충돌; 자동 넘김을 멈출 수 없음
 - Related Patterns: GS-05, GS-09, NV-02, MO-07
-- Reference Image: `assets/06-gestures.png` 스와이프 카드: 가로로 넘기는 카드 묶음 및 쪽 표시 점 3개
+- Reference Image: 장면: 스와이프 카드: 가로로 넘기는 카드 묶음 및 쪽 표시 점 3개
 
 ## GS-04 밀어서 삭제 (Swipe to delete)
 - ID: GS-04
@@ -96,7 +96,7 @@
 - Implementation Guidelines: 삭제 후 되돌리기 (스낵바, FB-02) 를 제공하고 실제 삭제는 되돌리기 시간이 지난 뒤 처리; 세로 스크롤을 막지 않도록 가로 방향이 확정된 뒤에만 항목을 움직임; 시작 위치는 화면 가장자리에서 띄움
 - Common Mistakes: 밀기 외 수단 없음; 되돌리기 없음; 한 번 밀어 즉시 삭제됨; 세로 스크롤 중 항목이 흔들림; 가장자리 뒤로 가기와 충돌
 - Related Patterns: GS-02, GS-09, FB-02, IC-02
-- Reference Image: `assets/06-gestures.png` 밀어서 삭제 카드: 목록 항목이 왼쪽으로 밀리고 오른쪽에 빨간 "삭제" 노출
+- Reference Image: 장면: 밀어서 삭제 카드: 목록 항목이 왼쪽으로 밀리고 오른쪽에 빨간 "삭제" 노출
 
 ## GS-05 드래그 (Drag)
 - ID: GS-05
@@ -106,7 +106,7 @@
 - Definition: 대상을 누른 채 끌어 다른 위치에 놓는 동작
 - Purpose: 순서 바꾸기, 위치 옮기기, 값 조절 같은 연속 이동
 - User Problem: 순서나 위치를 단추로 한 칸씩 바꾸면 느리고, 놓일 곳을 가늠하기 어려움
-- When to Use: 순위 목록 (원본 이미지: 3순위 삿포로 항목을 2순위 위로 옮김); 칸반 같은 영역 간 이동; 크기 및 위치 조정
+- When to Use: 순위 목록 (예시 화면: 3순위 삿포로 항목을 2순위 위로 옮김); 칸반 같은 영역 간 이동; 크기 및 위치 조정
 - When Not to Use: 이동 거리가 먼 목록 (스크롤과 함께 끌기 어려움); 드래그가 유일한 수단일 때; 단순 선택
 - Interaction Behavior: 손잡이를 누르면 항목이 들림; 끄는 동안 놓일 자리를 표시; 놓으면 확정; 취소 수단 (Esc 또는 원위치 놓기) 을 둠
 - Required States: 기본; 손잡이 hover 및 초점; 들림; 이동 중 (놓일 자리 표시); 놓음; 취소; 실패
@@ -116,7 +116,7 @@
 - Implementation Guidelines: Pointer Events 로 마우스 및 터치를 한 코드로 처리; 끌기 영역에 CSS `touch-action` 을 지정해 스크롤과 충돌을 막음; 자리 옮김 뒤 초점이 이동한 항목에 남게 함
 - Common Mistakes: 드래그만 있고 단추 대안이 없음; 손잡이가 없어 스크롤과 구분 불가; 놓일 자리 미표시; 이동 결과를 보조기기에 알리지 않음
 - Related Patterns: GS-03, GS-04, FM-07, MO-03
-- Reference Image: `assets/06-gestures.png` 드래그 카드: 손잡이가 있는 항목 "3순위 삿포로" 가 들려 "2순위 후쿠오카" 위로 이동
+- Reference Image: 장면: 드래그 카드: 손잡이가 있는 항목 "3순위 삿포로" 가 들려 "2순위 후쿠오카" 위로 이동
 
 ## GS-06 핀치 (Pinch)
 - ID: GS-06
@@ -128,15 +128,15 @@
 - User Problem: 작은 화면에서 세부를 보려면 배율을 자유롭게 바꿔야 함
 - When to Use: 이미지, 지도, 도면, 문서 미리보기처럼 세부를 살피는 내용
 - When Not to Use: 확대할 이유가 없는 일반 본문; 핀치만이 유일한 확대 수단일 때; 한 손 사용이 전제인 화면
-- Interaction Behavior: 두 접점 거리에 비례해 배율 변화; 접점 사이 중심을 기준으로 확대; 놓으면 배율 유지; 최소 및 최대 배율은 제품에서 정한다
+- Interaction Behavior: 두 접점 거리에 비례해 배율 변화; 접점 사이 중심을 기준으로 확대; 놓으면 배율 유지; 최소 1배, 최대 4배 (DF-11)
 - Required States: 기본 배율; 확대 중; 최대 및 최소 도달; 이동 (확대 후 끌기); 원래 배율 복귀
 - Visual Guidelines: 확대된 상태에서 현재 위치를 알 수 있게 함 (축소판 또는 안내); 확대 단추에 현재 배율 한계를 반영 (최대일 때 비활성)
 - Accessibility: 다중 접점 제스처이므로 확대 및 축소 단추 같은 단일 포인터 대안 (2.5.1); 키보드 + 및 - 키; 단추 목표 크기 24x24 CSS px 이상 (2.5.8)
-- Responsive Considerations: 데스크톱은 확대 및 축소 단추, 키보드 +, -, 마우스 휠 조합이 대응; 트랙패드 핀치는 브라우저 기본 확대와 겹치므로 동작 범위를 제품에서 정한다
+- Responsive Considerations: 데스크톱은 확대 및 축소 단추, 키보드 +, -, 마우스 휠 조합이 대응; 트랙패드 핀치는 브라우저 기본 확대와 겹치므로 확대 대상 영역 안에서만 가로채고 영역 밖은 브라우저 확대에 맡김 (DF-11)
 - Implementation Guidelines: 확대 영역에 CSS `touch-action` 을 지정해 브라우저 기본 핀치와 구분; 페이지 전체 확대를 막는 viewport 설정은 두지 않음; 두 접점 이벤트는 Pointer Events 로 추적
 - Common Mistakes: 핀치만 있고 단추가 없음; 페이지 전체 확대를 금지; 확대 후 이동 불가; 배율을 되돌릴 방법 없음
 - Related Patterns: GS-07, GS-05, LD-07, MO-08
-- Reference Image: `assets/06-gestures.png` 핀치 카드: 이미지 대각선 양 끝의 접점 2개
+- Reference Image: 장면: 핀치 카드: 이미지 대각선 양 끝의 접점 2개
 
 ## GS-07 두 번 탭 (Double tap)
 - ID: GS-07
@@ -156,7 +156,7 @@
 - Implementation Guidelines: 요소에 CSS `touch-action: manipulation` 으로 브라우저 두 번 탭 확대를 끔; 첫 탭 지연이 문제면 한 번 탭 동작이 없는 영역에만 사용
 - Common Mistakes: 두 번 탭만으로 좋아요 같은 기능 제공; 한 번 탭 반응이 느려짐; 단추 없음; 브라우저 기본 확대와 충돌
 - Related Patterns: GS-01, GS-06, MO-08, LD-07
-- Reference Image: `assets/06-gestures.png` 두 번 탭 카드: 이미지 영역 (동작 중간 장면)
+- Reference Image: 장면: 두 번 탭 카드: 이미지 영역 (동작 중간 장면)
 
 ## GS-08 당겨서 새로고침 (Pull to refresh)
 - ID: GS-08
@@ -168,15 +168,15 @@
 - User Problem: 목록이 오래된 것인지 알 수 없고 새로고침 위치를 찾기 어려움
 - When to Use: 시간순으로 갱신되는 목록 (특가, 피드, 알림); 모바일 앱형 화면
 - When Not to Use: 자동 갱신이 충분한 화면; 입력 중인 폼; 목록이 아닌 화면; 맨 위가 아닌 위치에서의 당김
-- Interaction Behavior: 맨 위에서 당기면 표시가 따라 내려옴; 기준 거리를 넘고 놓으면 새로 불러옴; 기준 거리는 제품에서 정한다; 새 항목이 맨 위에 추가됨
+- Interaction Behavior: 맨 위에서 당기면 표시가 따라 내려옴; 기준 거리를 넘고 놓으면 새로 불러옴; 기준 거리는 80px (DF-09); 새 항목이 맨 위에 추가됨
 - Required States: 대기; 당기는 중; 놓으면 갱신됨 (기준 도달); 갱신 중; 완료 (새 항목 수 표시); 변경 없음; 오류
-- Visual Guidelines: 당기는 정도를 표시가 보여줌; 완료 후 새 항목을 맨 위에 보임 (원본 이미지는 "새 특가 3개"); 오류는 ES-08 또는 인라인 문구
+- Visual Guidelines: 당기는 정도를 표시가 보여줌; 완료 후 새 항목을 맨 위에 보임 (예시 화면은 "새 특가 3개"); 오류는 ES-08 또는 인라인 문구
 - Accessibility: 경로 제스처이므로 새로고침 단추를 둠 (2.5.1); 완료 결과를 `role="status"` 로 알림; 갱신 중 영역 `aria-busy`
 - Responsive Considerations: 데스크톱은 새로고침 단추 또는 키보드 F5, 자동 갱신이 대응; 마우스 휠로 당기기는 지원하지 않음
 - Implementation Guidelines: 브라우저 기본 새로고침과 겹치면 CSS `overscroll-behavior` 로 조정; 스크롤 위치가 맨 위일 때만 동작; 갱신 중 중복 요청을 막음
 - Common Mistakes: 단추 대안 없음; 변경이 없을 때 아무 응답 없음; 스크롤 중간에서 작동; 갱신 후 읽던 위치를 잃음
 - Related Patterns: LD-01, LD-09, ES-08, GS-03
-- Reference Image: `assets/06-gestures.png` 당겨서 새로고침 카드: 목록 맨 위에 "새 특가 3개" 항목
+- Reference Image: 장면: 당겨서 새로고침 카드: 목록 맨 위에 "새 특가 3개" 항목
 
 ## GS-09 가장자리 스와이프 (Edge swipe)
 - ID: GS-09
@@ -190,10 +190,10 @@
 - When Not to Use: 화면 가장자리에서 시작하는 자체 동작을 만들 때 (OS 의 뒤로 가기 제스처와 겹침); 되돌아갈 곳이 없는 최상위 화면
 - Interaction Behavior: 가장자리에서 안쪽으로 밀면 현재 화면이 손가락을 따라 밀리고 이전 화면이 드러남; 놓는 기준에 따라 돌아가거나 취소; 기준은 플랫폼 기본값을 따름
 - Required States: 대기; 진행 중 (이전 화면 노출); 완료 (이전 화면); 취소 (원위치)
-- Visual Guidelines: 상세 화면이 목록 위로 겹치고 밀려 나가는 모양 (원본 이미지: "특가 목록" 위로 옆에서 겹친 상세 화면); 이전 화면 위치를 유지
+- Visual Guidelines: 상세 화면이 목록 위로 겹치고 밀려 나가는 모양 (예시 화면: "특가 목록" 위로 옆에서 겹친 상세 화면); 이전 화면 위치를 유지
 - Accessibility: 보이는 뒤로 가기 단추 (NV-09) 를 둠 (2.5.1); 키보드 및 보조기기에서 뒤로 가기 접근 가능; 이동 후 초점을 이전 화면의 진입 항목에 되돌림 (2.4.3)
 - Responsive Considerations: 데스크톱은 브라우저 뒤로 가기 단추 및 화면 안 뒤로 가기 단추가 대응; 가장자리 동작은 제공하지 않음
 - Implementation Guidelines: OS 및 브라우저에 이미 있는 뒤로 가기 동작을 자체 구현하지 않고 이력이 화면 이동과 맞도록 함; 가장자리 시작 영역에는 가로 스와이프 (GS-03, GS-04) 를 두지 않음
 - Common Mistakes: OS 뒤로 가기와 겹치는 자체 가장자리 동작; 보이는 뒤로 가기 단추 없음; 돌아간 뒤 목록 위치 및 초점 소실; 이력이 화면 이동과 어긋남
 - Related Patterns: NV-09, GS-03, GS-04, MO-07
-- Reference Image: `assets/06-gestures.png` 가장자리 스와이프 카드: "특가 목록" 화면 위로 상세 화면이 옆에서 겹친 장면
+- Reference Image: 장면: 가장자리 스와이프 카드: "특가 목록" 화면 위로 상세 화면이 옆에서 겹친 장면

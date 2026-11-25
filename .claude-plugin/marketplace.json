@@ -7,7 +7,7 @@
       "name": "devkit",
       "source": "./",
       "description": "Project kickoff setup, secure coding (24 controls, 20 attack tests) and UI/UX patterns (90) for AI coding agents.",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "license": "MIT"
     }
   ]

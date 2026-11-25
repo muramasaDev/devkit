@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="CHANGELOG.md"><img alt="version" src="https://img.shields.io/badge/version-0.3.0-1f4fff"></a>
+  <a href="CHANGELOG.md"><img alt="version" src="https://img.shields.io/badge/version-0.4.0-1f4fff"></a>
   <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
   <a href="https://code.claude.com"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-d97757"></a>
   <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen"></a>
@@ -20,13 +20,13 @@
   <a href="#설치">설치</a> | <a href="#스킬">스킬</a> | <a href="#securecoding">securecoding</a> | <a href="CONTRIBUTING.md">기여</a> | <a href="SECURITY.md">보안</a> | <a href="README.md">English</a>
 </p>
 
-[Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md).
+[Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md). 스킬 본문은 한국어이고 영어 번역은 [ROADMAP.md](ROADMAP.md) 에 있다.
 
 <table>
 <tr>
 <td align="center"><b>3</b><br>스킬</td>
 <td align="center"><b>24</b><br>보안 통제</td>
-<td align="center"><b>20</b><br>공격 시험</td>
+<td align="center"><b>29</b><br>공격 시험</td>
 <td align="center"><b>90</b><br>UI/UX 패턴</td>
 <td align="center"><b>69</b><br>KISA 항목 대응</td>
 </tr>
@@ -41,7 +41,7 @@ flowchart LR
   A["/devkit:kickoff<br>성격 질문"] --> B["CLAUDE.md<br>.gitignore, git init"]
   A --> C["security-architecture.md<br>코드 전에 설계"]
   C --> D["/devkit:securecoding<br>통제 24개"]
-  D --> E["공격 시험 20개<br>security-report.md"]
+  D --> E["공격 시험 29개<br>security-report.md"]
   B --> F["/devkit:uiuxpatterns<br>패턴 90개, 상태, 접근성"]
 ```
 
@@ -58,23 +58,23 @@ flowchart LR
 /plugin marketplace add muramasaDev/devkit
 /plugin install devkit@devkit
 ```
-플러그인 없이 쓰려면 `skills/` 의 폴더를 `~/.claude/skills/` 에 복사한다. 스킬은 `SKILL.md`, `references/`, `templates/` 로 이루어진다.
+플러그인 없이 쓰려면 `skills/` 의 세 폴더를 모두 `~/.claude/skills/` 에 복사한다 (`kickoff` 가 `securecoding` 의 템플릿을 읽는다). 스킬은 `SKILL.md`, `references/`, `templates/` 로 이루어진다.
 
 ## 스킬
 | 스킬 | 호출 | 용도 |
 |---|---|---|
 | `kickoff` | `/devkit:kickoff` | 새 프로젝트 세팅: 성격 질문, `CLAUDE.md`, `.gitignore`, `git init`, 보안 설계 문서, 적용할 스킬 안내 |
-| `securecoding` | `/devkit:securecoding` | 보안 설계 및 검수: 통제 24개, 공격 시험 20개, 보고 양식 |
-| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 패턴 90개, 확장 용어 100여 개 및 UX 법칙, 웹 플랫폼 기능 선택표, 상호작용 규칙, 에이전트 화면 기준, 접근성 및 다크 패턴 점검 |
+| `securecoding` | `/devkit:securecoding` | 보안 설계 및 검수: 통제 24개, 공격 시험 29개, 보고 양식 |
+| `uiuxpatterns` | `/devkit:uiuxpatterns` | UI/UX: 패턴 90개, 확장 용어 69개 및 UX 법칙, 웹 플랫폼 기능 선택표, 상호작용 규칙, 에이전트 화면 기준, 접근성 및 다크 패턴 점검 |
 
 작업이 스킬 설명과 맞으면 자동으로도 불러온다.
 
 ## securecoding
 - **설계 먼저**: 요청 경로 (입구 계층, 서비스 계층, 데이터 계층), 원칙 16개, 첫 기능 전에 채우는 `security-architecture.md`
 - **통제 24개 (SEC-01 ~ SEC-24)**: SQL 인젝션, 무차별 대입, 비밀번호 해시, 파일 업로드, 의존성, 인증 및 MFA 및 인증번호, 권한 (IDOR), XSS, CSRF, 세션, 전송, 비밀정보, API 입력, 설정, 로그, 공급망, 인프라, 시험, 비즈니스 로직과 결제, 필드 허용 목록 (mass assignment), AI 기능 (프롬프트 인젝션), SQL 외 인젝션, 암호, 언어 한정
-- **공격 시험 20개**: `/admin`, ID 바꾸기, 브라우저의 키, 가격 변조, 수량 -1, 결제 위조, 쿠폰 반복, 가입 시 관리자, 인증번호 대입, '지시 무시해', 닉네임 스크립트, 가짜 이미지 업로드, Git 의 `.env`, DB 직접 쿼리 등
+- **공격 시험 29개**: `/admin`, ID 바꾸기, 브라우저의 키, 가격 변조, 수량 -1, 결제 위조, 쿠폰 반복, 가입 시 관리자, 인증번호 대입, '지시 무시해', 닉네임 스크립트, 가짜 이미지 업로드, Git 의 `.env`, DB 직접 쿼리 등
 - **참조**: KISA 소프트웨어 개발보안 가이드 (2021.12.29) 대응표, 근거 등급을 붙인 사고 사례, Cloudflare 및 AWS 및 Oracle Cloud 규칙
-- 규칙마다 근거를 표시한다: `[원문]` OWASP 확인, `[KISA]` 가이드 확인, `[일반]` 미확인. 실행하지 않은 시험은 PASS 로 적지 않는다
+- 규칙마다 근거를 표시한다: `[원문]` 원문 페이지 확인, `[요약 확인]` 가져온 요약본으로 확인, `[KISA]` 가이드 확인, `[일반]` 미확인, `[미실행]` 명령 미실행. 실행하지 않은 시험은 PASS 로 적지 않는다
 
 ## 구성
 ```text

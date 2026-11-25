@@ -1,8 +1,10 @@
 # Contributing
 
 ## Before a pull request
-- Run `python scripts/validate_uiuxpatterns.py`
+- Run `python scripts/validate.py` (`python3` or `py` on macOS, Linux, Windows). CI runs the same script
+- Run `claude plugin eval . --case '<skill>/*'` for the skill you changed (cases in `evals/`)
 - Run `claude plugin validate .` if Claude Code is installed
+- Keep each `description` at 300 characters or fewer and open `/skills` to confirm no truncation warning
 - Keep LF line endings (`.gitattributes` enforces it)
 
 ## Content rules

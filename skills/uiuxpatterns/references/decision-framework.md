@@ -1,6 +1,7 @@
 # UI Pattern Decision Framework
 
 - 역할: 사용자 요청과 프로젝트 맥락에서 패턴 후보를 좁히는 기준
+- 값 정본: `defaults.md` (본문의 DF-nn 은 그 표의 항목 번호)
 - 아래 표는 출발점이고 절대 규칙이 아님. 후보의 상세 파일에서 When to Use 및 When Not to Use 를 확인한 뒤 확정한다
 - 원칙: 사용자의 목적에 필요하지 않은 패턴은 적용하지 않는다. 기존 화면의 같은 상황에 이미 쓰는 패턴이 있으면 그것을 따른다
 
@@ -43,7 +44,7 @@
 | 모양이 정해진 콘텐츠의 첫 로딩 | LD-02 Skeleton | LD-01 Spinner | 결과 배치를 미리 알면 스켈레톤 |
 | 짧고 모양을 모르는 대기 | LD-01 Spinner | 표시 없음 | 아주 짧게 끝나면 표시가 번쩍이지 않게 지연 후 표시 |
 | 진행률을 실제로 측정할 수 있는 작업 | LD-03 Progress bar | LD-04 Progress ring | 좁은 자리는 링. 측정 불가면 스피너 |
-| 여러 단계 입력 | LD-05 Step indicator | 한 화면 폼 | 단계가 여럿이고 순서가 있을 때 (기준 개수는 제품에서 정함) |
+| 여러 단계 입력 | LD-05 Step indicator | 한 화면 폼 | 단계가 3개 이상이고 순서가 있을 때 (DF-30) |
 | 단추를 눌러 제출 | LD-06 Button loading | LD-01 Spinner | 누른 자리에서 처리 중 표시 및 중복 실행 방지 |
 | 실패가 드물고 되돌리기 쉬운 동작 | LD-08 Optimistic update | LD-06 Button loading | 결제 등 결과가 중요한 동작에는 쓰지 않음 |
 | 큰 이미지 | LD-07 Progressive image | LD-02 Skeleton | 저해상도 미리보기를 만들 수 있을 때 |
@@ -81,7 +82,7 @@
 |---|---|---|---|
 | 모바일 최상위 목적지가 적고 자주 오감 | NV-01 Tab bar | NV-03 Drawer | 목적지가 더 많거나 덜 쓰이면 드로어 |
 | 한 화면 안의 분류 | NV-02 Top tabs | FM-03 Segmented control | 내용 전환은 탭, 보기 방식 전환은 세그먼트 |
-| 깊은 계층에서 현재 위치 | NV-04 Breadcrumb | NV-09 Back navigation | 계층이 깊은 웹 (기준 단수는 제품에서 정함) |
+| 깊은 계층에서 현재 위치 | NV-04 Breadcrumb | NV-09 Back navigation | 계층이 3단계 이상인 웹 (DF-31) |
 | 긴 화면에서 맥락 및 주 행동 유지 | NV-05 Sticky header | 없음 | 화면 높이를 과하게 차지하지 않을 때 |
 | 화면의 주 행동 하나 | NV-06 Floating action button | 헤더의 단추 | 화면당 하나 |
 | 목록 탐색 (찾기, 위치 복귀 필요) | NV-07 Pagination | NV-08 + `더 보기` | 검색 결과, 표, 관리 화면 |
@@ -90,7 +91,7 @@
 ### 입력
 | 상황 | 후보 | 고르는 기준 |
 |---|---|---|
-| 하나 고르기, 선택지가 적고 모두 보여야 함 (기준 개수는 제품에서 정함) | FM-06 Radio button, FM-03 Segmented control | 폼 안은 라디오, 보기 전환은 세그먼트 |
+| 하나 고르기, 선택지가 2개에서 5개이고 모두 보여야 함 (DF-32) | FM-06 Radio button, FM-03 Segmented control | 폼 안은 라디오, 보기 전환은 세그먼트 |
 | 하나 고르기, 선택지 많음 | FM-02 Select | 아주 많으면 검색 가능한 입력 검토 |
 | 여러 개 고르기 | FM-05 Checkbox | 제출 시 적용 |
 | 켜고 끄기, 즉시 적용 | FM-04 Switch | 제출 단추가 있는 폼이면 체크박스 |

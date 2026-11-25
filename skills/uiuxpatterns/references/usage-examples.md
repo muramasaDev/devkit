@@ -2,10 +2,13 @@
 
 ## 호출
 - 자동: 화면 설계, 구현, 검수, 개선 요청이면 스킬 설명(description)에 따라 불린다
-- 직접: `/universal-uiux <요청>` (Claude Code), 또는 요청에 `universal-uiux 스킬로` 를 적는다
+- 직접: `/devkit:uiuxpatterns <요청>` (Claude Code), 또는 요청에 `devkit:uiuxpatterns 스킬로` 를 적는다
 - 스킬은 요청에서 모드(A ~ F)를 고르고, 필요한 참조 파일만 연다
+- 시간, 거리, 개수 같은 값을 정해 달라는 요청은 `defaults.md` 의 기본값으로 바로 답한다
 
 ## 시나리오별 모드 및 읽을 파일
+
+모드 A 와 E 의 `accessibility.md` 는 패턴 파일의 Accessibility 항목으로 먼저 보고, 기준을 정해야 할 때만 연다 (`SKILL.md` 참조 표).
 
 | No | 요청 예 | 모드 | 읽을 파일 | 산출 |
 |---|---|---|---|---|
@@ -13,7 +16,7 @@
 | 2 | 이 설정 화면 UI 를 개선해 줘 (저장 반응 없음 등 결함 포함) | C 관점으로 결함 목록 후 B (구조 정리만이면 D, 검토만이면 C) | `decision-framework.md`, `quality-checklist.md`, `accessibility.md`, `design-system.md` 1절, 결함이 나온 카테고리 파일 | `templates/ui-implementation.md` 형식: 결함 목록, 수정, 바뀐 동작, 회귀 확인 |
 | 3 | 모바일 회원가입 폼을 설계해 줘 | A | `decision-framework.md`, `forms.md`, `feedback.md`, `accessibility.md`, `responsive-design.md`, `dark-patterns.md` (동의 항목) | `templates/ui-analysis.md` 형식 (필드별 입력 요소 및 상태, 오류 처리) |
 | 4 | AI 챗봇 화면을 설계해 줘 | A | `decision-framework.md`, `ai-interfaces.md`, `loading.md`, `empty-states.md`, `accessibility.md` | `templates/ui-analysis.md` 형식 (대화 상태별 화면 정의) |
-| 5 | 목록 화면의 로딩 및 오류 상태를 설계해 줘 | A 또는 B | `decision-framework.md`, `loading.md`, `empty-states.md`, `accessibility.md` (다시 불러오기 실패 안내가 필요하면 `feedback.md`) | `templates/ui-analysis.md` 4절 상태 표 (로딩, 빈 화면 종류, 오류, 일부 실패) |
+| 5 | 목록 화면의 로딩 및 오류 상태를 설계해 줘 | A 또는 B | `decision-framework.md`, `loading.md`, `empty-states.md`, `accessibility.md`, `defaults.md` (다시 불러오기 실패 안내가 필요하면 `feedback.md`) | `templates/ui-analysis.md` 4절 상태 표 (로딩, 빈 화면 종류, 오류, 일부 실패) |
 | 6 | 결제 및 구독 흐름에 다크 패턴이 있는지 봐 줘 | C (서비스 전체면 F) | `decision-framework.md`, `dark-patterns.md`, `accessibility.md`, `quality-checklist.md` 10절 | `templates/ui-audit.md` 형식 보고. 코드 수정 없음 |
 | 7 | 디자인은 그대로 두고 컴포넌트 중복을 정리해 줘 | D | `decision-framework.md`, `design-system.md` 1절 및 5절, `accessibility.md`, `quality-checklist.md` 5절 및 11절 | `templates/ui-implementation.md` 형식: 차이표, 통합, 바뀐 동작, 확인한 화면 |
 
@@ -33,6 +36,10 @@
 
 ## 예 4. 기존 디자인 시스템이 있는 프로젝트 (모드 B)
 - 스킬 동작: `design-system.md` 1절 순서로 의존성, 토큰, 공용 컴포넌트를 찾는다. 있는 Button, Dialog, Toast 를 쓰고, 색 및 간격은 기존 토큰을 참조한다. 없는 컴포넌트만 같은 이름 규칙으로 추가한다. 새 라이브러리는 넣지 않는다
+
+## 예 5. 값 정하기
+- 요청: `토스트는 몇 초 뒤에 사라지게 할까`
+- 스킬 동작: `defaults.md` 의 DF-01 로 바로 답한다. 정보성 토스트는 5초 (일반 권고, 출처 미확인), 오류는 자동으로 닫지 않음 (DF-03), 포인터를 올리거나 초점이 안에 있으면 타이머를 멈춤 (DF-04). 바꿔도 되는 조건을 함께 적고 `제품에서 정하세요` 로 되돌리지 않는다
 
 ## 보고에 들어가는 것 (모든 모드)
 1. 작업 목적

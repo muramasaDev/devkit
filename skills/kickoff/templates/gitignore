@@ -1,16 +1,33 @@
+# [기본] 항상 넣는다
 # secrets
 .env
 .env.*
 !.env.example
 *.pem
 *.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+id_rsa*
+id_dsa*
+id_ecdsa*
+id_ed25519*
+*credentials*.json
+serviceAccountKey*.json
+*.tfstate
+*.tfstate.*
+*.tfvars
+.terraform/
 
-# dependencies and builds
-node_modules/
-__pycache__/
-.venv/
-dist/
-build/
+# local data
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.log
 
 # OS and editor
 .DS_Store
@@ -18,6 +35,43 @@ Thumbs.db
 .idea/
 .vscode/
 
-# logs and local data
-*.log
-*.sqlite
+# [Node]
+node_modules/
+dist/
+build/
+coverage/
+.next/
+.nuxt/
+.cache/
+*.tsbuildinfo
+
+# [Python]
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+
+# [Java]
+target/
+build/
+out/
+.gradle/
+*.class
+
+# [.NET]
+bin/
+obj/
+.vs/
+*.user
+
+# [Go]
+/bin/
+*.exe
+*.test
+coverage.out

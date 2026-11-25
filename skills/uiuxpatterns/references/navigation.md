@@ -1,8 +1,8 @@
 # Navigation (이동 구조)
 
 - 범위: 화면 이동 구조 9종 (NV-01 ~ NV-09) 의 선택 기준 및 접근성 조건
-- 참조 이미지: `assets/08-navigation.png`
 - 색인: `pattern-catalog.md`
+- 값 정본: `defaults.md` (본문의 DF-nn 은 그 표의 항목 번호)
 
 ## 유사 패턴 구분
 | 헷갈리는 쌍 | 고르는 기준 |
@@ -31,7 +31,7 @@
 - Implementation Guidelines: 페이지를 이동시키면 링크 목록 (`<nav>` 안 `<a>`) 으로 만들고, 같은 페이지의 패널만 바꾸면 `role="tablist"` 구조를 씀; 본문 하단에 탭바 높이만큼 `padding-bottom` 을 두고, 초점 이동 때 가림은 `scroll-padding-bottom` 으로 막음
 - Common Mistakes: 글자 없는 아이콘만 둠; 목적지가 너무 많아 좁아짐; 현재 위치를 색으로만 표시; 탭바 위에 가려진 본문 마지막 항목
 - Related Patterns: NV-02, NV-03, NV-09, FB-09
-- Reference Image: `assets/08-navigation.png` 하단 탭바 카드: 아래 탭 "홈", "항공권", "예약", "MY", 현재 탭 "홈"
+- Reference Image: 장면: 하단 탭바 카드: 아래 탭 "홈", "항공권", "예약", "MY", 현재 탭 "홈"
 
 ## NV-02 상단 탭 (Top tabs)
 - ID: NV-02
@@ -48,10 +48,10 @@
 - Visual Guidelines: 현재 탭을 밑줄 및 글자 굵기로 구분하고 색만으로 구분하지 않음 (WCAG 1.4.1); 글자 대비 4.5:1 (1.4.3); 탭 간 간격은 목표 크기를 확보
 - Accessibility: `role="tablist"`, `role="tab"`, `role="tabpanel"` 및 `aria-selected`; 방향키로 탭 간 이동하고 Tab 키는 패널로 이동; 탭 목표 크기 24x24 CSS px 이상 (WCAG 2.5.8)
 - Responsive Considerations: 좁은 화면은 가로 스크롤 탭, 넓은 화면은 모두 펼침; 터치는 스와이프로 패널 전환을 더할 수 있으나 탭 선택이 대체 수단
-- Implementation Guidelines: 활성 탭만 Tab 순서에 두고 나머지는 방향키로 이동; 패널 전환 시 URL 에 선택 탭을 반영할지는 제품에서 정한다; 패널은 지연 로딩 가능
+- Implementation Guidelines: roving tabindex 로 활성 탭만 Tab 순서에 두고 나머지는 방향키로 이동 (기본). `focusgroup` 은 기능 감지 뒤 점진 적용하고 지원 상태는 MDN 호환성 표에서 확인; 패널 전환 시 URL 에 선택 탭을 반영 (DF-37); 패널은 지연 로딩 가능
 - Common Mistakes: 탭이 페이지 이동인데 `tab` 역할을 씀; 스와이프만 있고 탭이 없음; 탭이 많아 가로 스크롤 중 일부가 숨음; 현재 탭 표시가 약함
 - Related Patterns: NV-01, GS-03, LD-05, FM-03
-- Reference Image: `assets/08-navigation.png` 상단 탭 카드: 탭 "전체", "예약 중", "예약 완료", 현재 탭 밑줄
+- Reference Image: 장면: 상단 탭 카드: 탭 "전체", "예약 중", "예약 완료", 현재 탭 밑줄
 
 ## NV-03 드로어 (Drawer)
 - ID: NV-03
@@ -71,7 +71,7 @@
 - Implementation Guidelines: `<nav>` 안에 링크 목록; 모달형은 `<dialog>` 를 쓸 수 있음; 여는 단추 상태 `aria-expanded` 를 열림 및 닫힘에 맞춰 갱신; 입장 움직임은 MO-07
 - Common Mistakes: 주요 목적지를 드로어에만 둠; 단추에 글자 없이 아이콘만; 열린 뒤 초점이 본문에 남음; 닫을 때 초점 복귀 없음
 - Related Patterns: NV-01, IC-01, FB-04, MO-07
-- Reference Image: `assets/08-navigation.png` 드로어 카드: 본문만 보이는 장면 (캡처 시점에 메뉴 미노출)
+- Reference Image: 장면: 드로어 카드: 본문만 보이는 장면 (캡처 시점에 메뉴 미노출)
 
 ## NV-04 브레드크럼 (Breadcrumb)
 - ID: NV-04
@@ -87,11 +87,11 @@
 - Required States: 기본; hover; focus-visible; 현재 (링크 아님); 줄임 (긴 경로)
 - Visual Guidelines: 구분 기호 (원본 이미지: ›) 로 단계를 나눔; 현재 단계는 링크와 모양이 다름; 앞부분을 흐리게 처리하더라도 글자 대비는 4.5:1 (WCAG 1.4.3)
 - Accessibility: `<nav>` 에 이름 (`aria-label`) 및 순서 목록 `<ol>`; 현재 단계에 `aria-current="page"`; 구분 기호는 장식이므로 `aria-hidden="true"` 요소로 넣거나 CSS 테두리로 그림 (CSS `content` 로 넣은 글자는 보조기기가 읽을 수 있음)
-- Responsive Considerations: 좁은 화면은 바로 위 단계 하나로 줄이거나 가로 스크롤하는 방식을 제품에서 정한다; 터치 목표 크기 확보
-- Implementation Guidelines: 경로 데이터를 화면 구조에서 가져와 중복 정의를 피함; 줄임 표시는 접근 가능한 이름을 유지; 구조화 데이터 사용 여부는 제품에서 정한다
+- Responsive Considerations: 좁은 화면은 바로 위 단계 하나로 줄이고 전체 경로는 눌러서 펼침 (DF-38); 터치 목표 크기 확보
+- Implementation Guidelines: 경로 데이터를 화면 구조에서 가져와 중복 정의를 피함; 줄임 표시는 접근 가능한 이름을 유지; 구조화 데이터는 검색 노출이 필요한 공개 페이지에서만 사용 (DF-39)
 - Common Mistakes: 이력 기반 경로를 계층 경로처럼 표시; 현재 단계가 링크; 구분 기호를 보조기기가 낭독; 좁은 화면에서 줄바꿈이 어지러움
 - Related Patterns: NV-09, NV-01, NV-05
-- Reference Image: `assets/08-navigation.png` 브레드크럼 카드: 경로 "여행 › 일본 › 오사카" ("여행" 및 "일본" 흐림), 제목 "오사카 왕복 항공권"
+- Reference Image: 장면: 브레드크럼 카드: 경로 "여행 › 일본 › 오사카" ("여행" 및 "일본" 흐림), 제목 "오사카 왕복 항공권"
 
 ## NV-05 고정 헤더 (Sticky header)
 - ID: NV-05
@@ -103,7 +103,7 @@
 - User Problem: 길게 스크롤하면 지금 보는 화면 및 적용된 조건을 잊음
 - When to Use: 필터 칩 또는 정렬이 목록과 함께 계속 필요한 화면; 목록 제목을 유지해야 할 때
 - When Not to Use: 헤더가 커서 본문 공간을 크게 가릴 때; 가로 방향 낮은 화면; 맥락이 바뀌지 않는 짧은 화면
-- Interaction Behavior: 스크롤하면 헤더가 위에 붙고 본문이 아래로 흐름; 아래로 스크롤할 때 줄이거나 숨기고 위로 스크롤할 때 다시 보이는 방식은 제품에서 정한다
+- Interaction Behavior: 스크롤하면 헤더가 위에 붙고 본문이 아래로 흐름; 기본은 항상 고정이며, 세로 공간이 부족한 모바일 콘텐츠 화면에서만 아래로 스크롤할 때 줄이거나 숨기고 위로 스크롤할 때 다시 보임 (DF-40)
 - Required States: 일반 위치; 붙음 (stuck); 줄어듦 또는 숨김; 칩 선택 상태; 구분 그림자 (붙었을 때)
 - Visual Guidelines: 붙었을 때 본문과 구분되는 경계 또는 그림자; 높이를 작게; 본문과 겹치는 영역의 배경을 불투명하게 해 글자 대비 유지 (WCAG 1.4.3)
 - Accessibility: 키보드 초점이 고정 헤더 뒤로 완전히 가려지지 않게 함 (WCAG 2.4.11); 확대 및 가로 화면에서 헤더가 본문을 모두 가리지 않음; 읽기 순서는 헤더 다음 본문
@@ -111,7 +111,7 @@
 - Implementation Guidelines: CSS `position: sticky` 와 `top` 값 사용; 부모 요소의 overflow 설정이 sticky 를 막을 수 있으므로 확인; `scroll-padding-top` 으로 이동 시 가림 방지
 - Common Mistakes: 키보드 초점이 헤더에 가려짐; 헤더 높이가 과해 본문이 좁아짐; sticky 가 부모 overflow 때문에 동작하지 않음; 불투명하지 않아 글자가 겹쳐 보임
 - Related Patterns: NV-01, NV-08, IC-06, FB-09
-- Reference Image: `assets/08-navigation.png` 고정 헤더 카드: 위에 붙은 "항공권" 및 칩 "편도", "서울", 아래로 흐르는 목록 "상품 4", "상품 5"
+- Reference Image: 장면: 고정 헤더 카드: 위에 붙은 "항공권" 및 칩 "편도", "서울", 아래로 흐르는 목록 "상품 4", "상품 5"
 
 ## NV-06 플로팅 버튼 (Floating action button)
 - ID: NV-06
@@ -131,7 +131,7 @@
 - Implementation Guidelines: `<button>` 을 `position: fixed` 또는 sticky 로 배치; 하단 탭바 (NV-01) 와 겹치지 않게 위치를 계산; 안전 영역 여백 고려
 - Common Mistakes: 대표 행동이 아닌 보조 행동에 사용; 이름 없는 아이콘; 목록 마지막 항목을 가림; 여러 개를 띄움
 - Related Patterns: NV-01, NV-05, FB-05, IC-02
-- Reference Image: `assets/08-navigation.png` 플로팅 버튼 카드: 목록 위 오른쪽 아래 원형 + 단추
+- Reference Image: 장면: 플로팅 버튼 카드: 목록 위 오른쪽 아래 원형 + 단추
 
 ## NV-07 페이지네이션 (Pagination)
 - ID: NV-07
@@ -145,13 +145,13 @@
 - When Not to Use: 정해진 목표 없이 훑어보는 피드 (무한 스크롤 NV-08); 항목이 적어 한 쪽에 모두 들어감
 - Interaction Behavior: 쪽 번호 또는 이전 및 다음으로 이동; 현재 쪽 표시; 이동 뒤 목록 맨 위로 이동하고 URL 에 쪽 번호가 반영됨
 - Required States: 현재 쪽 (원본 이미지: 3); 다른 쪽; 이전 및 다음 활성; 첫 쪽에서 이전 비활성; 마지막 쪽에서 다음 비활성; 로딩 중
-- Visual Guidelines: 현재 쪽을 모양으로 구분 (색만으로 하지 않음, WCAG 1.4.1); 쪽 번호가 많으면 줄임 표시 규칙을 제품에서 정한다; 간격 확보
+- Visual Guidelines: 현재 쪽을 모양으로 구분 (색만으로 하지 않음, WCAG 1.4.1); 쪽 번호가 많으면 처음, 마지막, 현재 쪽과 앞뒤 1쪽만 표시하고 나머지는 생략 표시 (DF-41); 간격 확보
 - Accessibility: `<nav>` 에 이름 (`aria-label`); 현재 쪽 `aria-current="page"`; 이전 및 다음 단추에 이름; 목표 크기 24x24 CSS px 이상 (WCAG 2.5.8), 터치 44x44pt (Apple HIG)
 - Responsive Considerations: 좁은 화면은 이전, 다음, 현재 쪽 위주로 줄임; 데스크톱은 쪽 번호를 모두 노출
 - Implementation Guidelines: 각 쪽을 링크 (`<a href>`) 로 만들어 새로고침, 공유, 뒤로 가기에서 같은 쪽이 열리게 함; 쪽 이동 후 초점을 목록 제목으로 옮김; 쪽 수 계산은 서버에서 받음
 - Common Mistakes: 쪽 번호를 URL 에 반영하지 않아 뒤로 가기가 첫 쪽으로 돌아감; 이동 뒤 스크롤이 맨 아래에 남음; 작은 목표; 현재 쪽을 색으로만 표시
 - Related Patterns: NV-08, NV-05, LD-01, ES-02
-- Reference Image: `assets/08-navigation.png` 페이지네이션 카드: "‹ 1 2 3 ›", 현재 쪽 3
+- Reference Image: 장면: 페이지네이션 카드: "‹ 1 2 3 ›", 현재 쪽 3
 
 ## NV-08 무한 스크롤 (Infinite scroll)
 - ID: NV-08
@@ -168,10 +168,10 @@
 - Visual Guidelines: 불러오는 자리 표시를 목록 끝에 둠; 끝 도달을 문구로 알림; 새 항목이 들어올 때 읽던 위치가 밀리지 않음
 - Accessibility: 키보드 사용자는 푸터까지 Tab 을 한참 눌러도 도달하지 못하는 문제가 있으므로 `더 보기` 단추 대안을 둠; 새 항목 추가 시 초점을 옮기지 않고 `role="status"` 로 추가 알림; 불러오는 영역 `aria-busy`
 - Responsive Considerations: 모바일은 스크롤이 자연스러워 쓰기 쉽지만 푸터가 필요하면 `더 보기` 단추; 데스크톱은 키보드 및 푸터 접근을 위해 페이지네이션 또는 `더 보기` 단추 우선
-- Implementation Guidelines: 스크롤 감시는 IntersectionObserver 같은 네이티브 API; 뒤로 가기 후 위치 복원을 위해 불러온 범위를 URL 또는 이력 상태에 저장; 항목이 쌓이는 만큼 화면 밖 항목 처리 방법을 제품에서 정한다
+- Implementation Guidelines: 스크롤 감시는 IntersectionObserver 같은 네이티브 API; 뒤로 가기 후 위치 복원을 위해 불러온 범위를 URL 또는 이력 상태에 저장; 화면 밖 항목은 처음에는 유지하고 성능 측정에서 문제가 확인되면 가상화 (DF-42)
 - Common Mistakes: 푸터에 도달할 수 없음; 뒤로 가기 하면 맨 위로 돌아가 위치를 잃음; 키보드 사용자가 끝까지 도달하지 못함; 로딩 실패 시 대응 없음; 불러오는 중 읽던 위치가 밀림
 - Related Patterns: NV-07, LD-01, LD-02, ES-08
-- Reference Image: `assets/08-navigation.png` 무한 스크롤 카드: 목록 "상품 4", "상품 5", "상품 6" 아래 회전 원
+- Reference Image: 장면: 무한 스크롤 카드: 목록 "상품 4", "상품 5", "상품 6" 아래 회전 원
 
 ## NV-09 뒤로 가기 (Back navigation)
 - ID: NV-09
@@ -191,4 +191,4 @@
 - Implementation Guidelines: 화면 이동을 이력에 맞게 기록해 브라우저 뒤로 가기와 같은 결과를 냄; 불필요한 이력 항목을 쌓아 뒤로 가기가 같은 화면에 머물게 하지 않음; 이전 화면 상태 (필터, 스크롤) 보존
 - Common Mistakes: 뒤로 가기 후 목록 위치 및 필터를 잃음; 같은 화면에서 이력만 쌓여 뒤로 가기가 안 먹힘; 이름 없는 화살표만 둠; OS 뒤로 가기와 다르게 동작
 - Related Patterns: GS-09, NV-04, NV-01, MO-07
-- Reference Image: `assets/08-navigation.png` 뒤로 가기 카드: 왼쪽 위 "‹ 상품 상세"
+- Reference Image: 장면: 뒤로 가기 카드: 왼쪽 위 "‹ 상품 상세"
