@@ -1,8 +1,26 @@
-# devkit
+<p align="center">
+  <img src="assets/banner.svg" alt="devkit" width="100%">
+</p>
 
-Start every project with the same setup: project kickoff, security design and UI/UX patterns. Skills for [Claude Code](https://code.claude.com).
+<h1 align="center">devkit</h1>
 
-[한국어](README.ko.md)  |  License: MIT (see [NOTICE.md](NOTICE.md) for third-party sources)
+<p align="center">
+  <b>Start every project with the same setup:</b><br>
+  <b>project kickoff, security design and UI/UX patterns.</b>
+</p>
+
+<p align="center">
+  <a href="CHANGELOG.md"><img alt="version" src="https://img.shields.io/badge/version-0.3.0-1f4fff"></a>
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <a href="https://code.claude.com"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-d97757"></a>
+  <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen"></a>
+</p>
+
+<p align="center">
+  <a href="#install">Install</a> | <a href="#skills">Skills</a> | <a href="#securecoding">securecoding</a> | <a href="CONTRIBUTING.md">Contributing</a> | <a href="SECURITY.md">Security</a> | <a href="README.ko.md">한국어</a>
+</p>
+
+Skills for [Claude Code](https://code.claude.com). MIT, third-party sources in [NOTICE.md](NOTICE.md).
 
 ## Install
 ```text

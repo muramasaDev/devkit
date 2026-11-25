@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" role="img" aria-label="devkit: kickoff, securecoding, uiuxpatterns">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fdf6ea"/>
+      <stop offset="1" stop-color="#fde9e6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="sh" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#6b4a2a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: -apple-system, "Segoe UI", "Malgun Gothic", "Apple SD Gothic Neo", Helvetica, Arial, sans-serif; fill: #1b1b1f; }
+    .t { font-size: 20px; font-weight: 700; }
+    .r { font-size: 15px; }
+    .s { font-size: 13px; fill: #6b6b73; }
+    .card { fill: #fff; filter: url(#sh); }
+    .ok { fill: #1f9d55; }
+    .off { fill: #fff; stroke: #c9c9d1; stroke-width: 2; }
+    .chip { fill: #eef2ff; }
+    .chipt { font-size: 14px; fill: #1f4fff; font-weight: 600; }
+  </style>
+
+  <rect width="1200" height="620" fill="url(#bg)"/>
+  <ellipse cx="600" cy="310" rx="520" ry="200" fill="url(#glow)"/>
+
+  <!-- top left: securecoding -->
+  <rect class="card" x="70" y="40" width="320" height="170" rx="16"/>
+  <text class="t" x="94" y="78">securecoding</text>
+  <g class="r">
+    <circle class="ok" cx="102" cy="108" r="9"/><path d="M97 108l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/>
+    <text x="122" y="113">SEC-01 SQL injection</text>
+    <circle class="ok" cx="102" cy="140" r="9"/><path d="M97 140l3 3 6-6" stroke="#fff" stroke-width="2" fill="none"/>
+    <text x="122" y="145">SEC-08 XSS</text>
+    <circle class="off" cx="102" cy="172" r="8"/>
+    <text x="122" y="177">SEC-21 AI features</text>
+  </g>
+
+  <!-- top middle: progress -->
+  <rect class="card" x="430" y="40" width="340" height="170" rx="16"/>
+  <text class="t" x="454" y="78">Attack tests</text>
+  <text class="r" x="454" y="112">20 scenarios, run before release</text>
+  <rect class="chip" x="454" y="126" width="70" height="28" rx="14"/><text class="chipt" x="489" y="145" text-anchor="middle">/admin</text>
+  <rect class="chip" x="532" y="126" width="96" height="28" rx="14"/><text class="chipt" x="580" y="145" text-anchor="middle">ID change</text>
+  <rect class="chip" x="636" y="126" width="94" height="28" rx="14"/><text class="chipt" x="683" y="145" text-anchor="middle">quantity -1</text>
+  <text class="s" x="454" y="176">Unrun tests are never marked PASS</text>
+
+  <!-- top right: terminal -->
+  <rect x="830" y="40" width="300" height="170" rx="16" fill="#16161d" filter="url(#sh)"/>
+  <circle cx="852" cy="62" r="5" fill="#ff5f57"/><circle cx="870" cy="62" r="5" fill="#febc2e"/><circle cx="888" cy="62" r="5" fill="#28c840"/>
+  <g font-size="14" style="font-family: Consolas, Menlo, monospace">
+    <text x="852" y="104" style="fill:#8b8b99;font-family:Consolas,Menlo,monospace;font-size:14px">/plugin install devkit@devkit</text>
+    <text x="852" y="132" style="fill:#7ee787;font-family:Consolas,Menlo,monospace;font-size:14px">/devkit:kickoff</text>
+    <text x="852" y="160" style="fill:#e6e6ec;font-family:Consolas,Menlo,monospace;font-size:14px">CLAUDE.md  .gitignore</text>
+    <text x="852" y="184" style="fill:#e6e6ec;font-family:Consolas,Menlo,monospace;font-size:14px">security-architecture.md</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="600" y="355" text-anchor="middle" style="font-size:150px;font-weight:900;fill:#1f4fff;letter-spacing:-4px">devkit</text>
+  <text x="600" y="400" text-anchor="middle" class="s" style="font-size:18px">kickoff  |  securecoding  |  uiuxpatterns</text>
+
+  <!-- bottom left: uiuxpatterns -->
+  <rect class="card" x="70" y="430" width="320" height="150" rx="16"/>
+  <text class="t" x="94" y="468">uiuxpatterns</text>
+  <text class="s" x="94" y="492">90 patterns, 10 categories</text>
+  <rect class="chip" x="94" y="508" width="62" height="28" rx="14"/><text class="chipt" x="125" y="527" text-anchor="middle">Toast</text>
+  <rect class="chip" x="164" y="508" width="86" height="28" rx="14"/><text class="chipt" x="207" y="527" text-anchor="middle">Skeleton</text>
+  <rect class="chip" x="258" y="508" width="62" height="28" rx="14"/><text class="chipt" x="289" y="527" text-anchor="middle">Modal</text>
+  <rect class="chip" x="94" y="544" width="96" height="28" rx="14"/><text class="chipt" x="142" y="563" text-anchor="middle">Empty state</text>
+
+  <!-- bottom middle: prompt -->
+  <rect class="card" x="430" y="430" width="340" height="62" rx="31"/>
+  <text class="r" x="462" y="467" style="fill:#8b8b99">How should this screen fail?</text>
+  <circle cx="736" cy="461" r="19" fill="#16161d"/>
+  <path d="M736 470v-18m-8 8l8-8 8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect class="card" x="430" y="508" width="340" height="72" rx="16"/>
+  <text class="t" x="454" y="538" style="font-size:16px">Interaction rules</text>
+  <text class="s" x="454" y="562">Esc closes one layer, IME-safe Enter</text>
+
+  <!-- bottom right: checklist table -->
+  <rect class="card" x="830" y="430" width="300" height="150" rx="16"/>
+  <text class="t" x="854" y="468" style="font-size:16px">Release checklist</text>
+  <g class="r">
+    <rect x="854" y="484" width="16" height="16" rx="4" fill="#1b1b1f"/><path d="M858 492l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/>
+    <text x="882" y="497" style="font-size:14px">Secrets out of Git</text>
+    <rect x="854" y="512" width="16" height="16" rx="4" fill="#1b1b1f"/><path d="M858 520l3 3 5-6" stroke="#fff" stroke-width="2" fill="none"/>
+    <text x="882" y="525" style="font-size:14px">Server decides price</text>
+    <rect x="854" y="540" width="16" height="16" rx="4" class="off"/>
+    <text x="882" y="553" style="font-size:14px">Rate limit on login</text>
+  </g>
+</svg>

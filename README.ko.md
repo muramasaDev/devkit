@@ -1,8 +1,26 @@
-# devkit
+<p align="center">
+  <img src="assets/banner.svg" alt="devkit" width="100%">
+</p>
 
-모든 프로젝트를 같은 세팅으로 시작한다: 프로젝트 킥오프, 보안 설계, UI/UX 패턴. [Claude Code](https://code.claude.com) 용 스킬.
+<h1 align="center">devkit</h1>
 
-[English](README.md)  |  라이선스: MIT (제3자 출처는 [NOTICE.md](NOTICE.md))
+<p align="center">
+  <b>모든 프로젝트를 같은 세팅으로 시작한다:</b><br>
+  <b>프로젝트 킥오프, 보안 설계, UI/UX 패턴.</b>
+</p>
+
+<p align="center">
+  <a href="CHANGELOG.md"><img alt="version" src="https://img.shields.io/badge/version-0.3.0-1f4fff"></a>
+  <a href="LICENSE"><img alt="license" src="https://img.shields.io/badge/license-MIT-blue"></a>
+  <a href="https://code.claude.com"><img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-d97757"></a>
+  <a href="CONTRIBUTING.md"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen"></a>
+</p>
+
+<p align="center">
+  <a href="#설치">설치</a> | <a href="#스킬">스킬</a> | <a href="#securecoding">securecoding</a> | <a href="CONTRIBUTING.md">기여</a> | <a href="SECURITY.md">보안</a> | <a href="README.md">English</a>
+</p>
+
+[Claude Code](https://code.claude.com) 용 스킬. MIT, 제3자 출처는 [NOTICE.md](NOTICE.md).
 
 ## 설치
 ```text
